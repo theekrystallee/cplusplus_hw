@@ -16,7 +16,9 @@ void get(std::istream& in, Point& p)
 {
     char ch;
 
-    in >> p.x >> ch >> p.y;
+    in >> p.x;
+    in >> ch;
+    in >> p.y;
 }
 void print(std::ostream& out, const Point& p)
 {
