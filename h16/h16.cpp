@@ -14,9 +14,9 @@ string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
 
 void get(std::istream& in, Point& p)
 {
-    char comma;
+    char ch;
 
-    in >> p.x >> comma >> p.y;
+    in >> p.x >> ch >> p.y;
 }
 void print(std::ostream& out, const Point& p)
 {
