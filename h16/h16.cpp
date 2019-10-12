@@ -22,6 +22,7 @@ void get(std::istream& in, Point& p)
 }
 void print(std::ostream& out, const Point& p)
 {
+
     out << "(" << p.x << ", " << p.y << ")";
 }
 
