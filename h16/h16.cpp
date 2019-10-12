@@ -20,7 +20,7 @@ void get(std::istream& in, Point& p)
 }
 void print(std::ostream& out, const Point& p)
 {
-    out << "(" << p.x << "," << p.y << ")";
+    out << "(" << p.x << ", " << p.y << ")";
 }
 
 double distanceBetween(const Point& a, const Point& b)
