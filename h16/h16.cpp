@@ -16,7 +16,6 @@ void get(std::istream& in, Point& p)
 {
     char ch;
     in >> p.x;
-    //in >> ch;
     in.get(ch);
     in >> p.y;
 }
