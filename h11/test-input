@@ -1,0 +1,74 @@
+CS 150 Test data for Homework 7
+
+1. Single line comment removed
+#include <iostream> // standard streams
+#include <string> // standard string class
+
+2. Comment embedded in a string
+cout << "/* this is not a comment " << endl;
+
+3. Strings in comments removed; single-line newlines retained
+// Single line comment should be deleted
+/* Paired comment should be deleted
+   // Not really a comment
+   "Not really a string\"    *****/
+#include <iostream>  // Single line comment should be deleted
+
+Test 4 - String-embedded comments retained
+char * s = "Some text /* with an embedded */ // comment ";
+
+Test 5 - Comment embedded in code line
+int main(int argc /* argument count */, argv[] /* strings */)
+
+Test 6 - Escaped quotes and comment embedded in code
+string s = "\"hello\""; /* cmt1 */ string s2 = "bye"; /* cmt2 */
+
+Test 7 - More escaped quotes in a string
+string s = "\"//not a comment\"//not a comment";
+
+Test 8 - DOXYGEN comments removed
+int a=3;
+/**
+    @author SG
+    @file "strip.cpp"
+*/
+void strip();
+
+Other tests you can check
+
+/**
+ * Doxygen style comments should be stripped.
+ * @author Stephen Gilbert
+ * @version CS 150 Spring 2018
+*/
+
+/*TABSTOP=4*/
+
+// -- C++ comment at start of line
+
+/*
+Multiline C-style comment
+#ifndef lint
+static const char sccs[] = "@(#)$Id: scc-test.example1.c,v 1.10 2015/08/17 04:14:48 jleffler Exp $";
+#endif
+*/
+
+/* Comment */ Non-comment /* Comment Again */ Non-Comment Again /*
+Comment again on the next line */
+
+// A C++ comment with a C-style comment marker /* in the middle
+This is plain text under C++ (C99) commenting - but comment body otherwise
+// A C++ comment with a C-style comment end marker */ in the middle
+
+Note that C++ comments can appear   // at the end of a line
+And the issue then is how should    // the newline be handled
+when the options -c or -n or both   // or neither are in use
+Should the newline be treated as    // part of the comment
+or should it be deleted so that     // text is run on altogether
+
+" */ /* SCC has been trained to know about strings /* */ */"!
+"\"Double quotes embedded in strings, \\\" too\'!"
+"/* This is not a comment */"
+"// This is not a comment either"
+
+"And escaped double quotes at the end of a string\""
