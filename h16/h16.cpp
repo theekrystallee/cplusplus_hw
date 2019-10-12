@@ -14,18 +14,13 @@ string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
 
 void get(std::istream& in, Point& p)
 {
-    char ch;
-    in >> p.x >> ch >> p.y;
-}
+    char comma;
 
-/**
- * Displays a Point in the form (x, y).
- * @param out the stream to print on
- * @param p the Point to print
- */
+    in >> p.x >> comma >> p.y;
+}
 void print(std::ostream& out, const Point& p)
 {
-    out << "(" << p.x << ", " << p.y << ")";
+    out << "(" << p.x << "," << p.y << ")";
 }
 
 double distanceBetween(const Point& a, const Point& b)
