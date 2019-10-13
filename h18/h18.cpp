@@ -38,6 +38,10 @@ std::vector<std::string> fileToWords(const std::string& filename)
     while (!in.eof())
     {
         results.push_back(word);
+        if (in.eof())
+        {
+            break;
+        }
     }
     return results;
 }
