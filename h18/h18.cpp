@@ -54,6 +54,11 @@ std::vector<std::string> fileToWords(const std::string& filename)
         for (int j = 0; j <= i; j++)
         {
             cout << wordCount[j] << endl;
+
+            if (in.eof())
+            {
+                break;
+            }
         }
 
     }
