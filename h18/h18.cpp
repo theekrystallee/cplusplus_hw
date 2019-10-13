@@ -45,15 +45,20 @@ std::vector<std::string> fileToWords(const std::string& filename)
 
     while (!in.eof())
     {
-        if (!empty(first) && !empty(last))
+        while (in.peek())
         {
             getline(in, line);
-            results.push_back(line);
-            if (in.eof())
-            {
-                getline (in, line);
                 results.push_back(line);
-                break;
+            if (!empty(first) && !empty(last))
+            {
+                getline(in, line);
+                results.push_back(line);
+                if (in.eof())
+                {
+                    getline (in, line);
+                    results.push_back(line);
+                    break;
+                }
             }
         }
 
