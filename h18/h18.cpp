@@ -50,6 +50,7 @@ std::vector<std::string> fileToWords(const std::string& filename)
         //     std::getline(cin, filename);
         //     results.push_back(results(word));;
         // }
+        in >> str;
 
     }
     return word;
