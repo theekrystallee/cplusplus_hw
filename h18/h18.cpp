@@ -10,7 +10,6 @@
 #include <fstream>
 #include <cctype>
 #include <sstream>
-#define MAX 10000
 
 using namespace std;
 
@@ -39,14 +38,14 @@ std::vector<std::string> fileToWords(const std::string& filename)
     }
     vector<string> results;
     string line;
-    string wordCount[MAX];
+    string wordCount;
     int i = 0;
     int index = -1;
     getline (in, line);
 
     while (!in.eof())
     {
-        wordCount[i] = line;
+
         i++;
         getline (in, line);
         results.push_back(line);
@@ -57,13 +56,7 @@ std::vector<std::string> fileToWords(const std::string& filename)
 
 
         }
-        for (int j = 0; j < MAX; j++)
-        {
-            if (line == wordCount[j])
-            {
-                cout << wordCount[j] << endl;
-            }
-        }
+
         if (in.eof())
         {
             break;
