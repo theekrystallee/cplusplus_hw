@@ -69,7 +69,7 @@ std::vector<std::string> fileToWords(const std::string& filename)
         throw invalid_argument("invalid filename");
     }
 
-    while (cin.peek() && !empty(first) && !empty(last) && !in.eof())
+    while (cin.peek())
     {
         getline (in, first);
         results.push_back(word);
