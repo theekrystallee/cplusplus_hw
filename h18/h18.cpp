@@ -38,11 +38,16 @@ std::vector<std::string> fileToWords(const std::string& filename)
     }
     vector<string> results;
     string line;
+    int i = 0;
 
     while (!in.eof())
     {
         getline(in, line);
         results.push_back(line);
+        while (!in.eof() && (i == 0))
+        {
+            getline(in, line);
+        }
         // if (in.eof())
         // {
         //     std::getline(cin, filename);
