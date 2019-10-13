@@ -65,20 +65,25 @@ std::vector<std::string> fileToWords(const std::string& filename)
     {
         throw invalid_argument("invalid filename");
     }
+    string line;
     while (!in.eof())
     {
-        string input;
-        for (size_t i = 0, len = word.size(); i < len; i++)
+        if (in.peek())
         {
-            if (in.eof() && !in.fail())
+            getline(in, line);
+            results.push_back(line);
+            for (size_t i = 0, len = line.size(); i < len; i++)
             {
-                cin >> input;
-                cout << input;
-            }
+                if (in.eof() && !in.fail())
+                {
+                    getline(in, line);
+                    results.push_back(line);
+                }
 
+            }
+            getline(in, line);
+            results.push_back(line);
         }
-        cin >> input;
-        cout << input;
     }
     return results;;
 }
