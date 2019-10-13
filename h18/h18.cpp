@@ -28,9 +28,7 @@ string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
 
 std::vector<std::string> fileToWords(const std::string& filename)
 {
-    string s;
 
-    ofstream out;
     ifstream in(filename.c_str());
 
 
@@ -53,6 +51,27 @@ std::vector<std::string> fileToWords(const std::string& filename)
 
     }
     in.close();
+    return results;
+
+    ifstream input("excluded.txt");
+
+    if (in.fail())
+    {
+        throw invalid_argument("invalid filename");
+    }
+
+    while (!input.eof())
+    {
+        getline(input, line);
+        results.push_back(line);
+        // if (in.eof())
+        // {
+        //     std::getline(cin, filename);
+        //     results.push_back(results(word));;
+        // }
+
+    }
+    input.close();
     return results;
 
     // in.open("excluded.txt");
