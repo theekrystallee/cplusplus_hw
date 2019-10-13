@@ -15,16 +15,12 @@ string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
 void get(std::istream& in, Point& p)
 {
     char ch;
-    in >> p.x >> ch >> p.y;
-    // in.get(ch);
-    //in >> p.y;
+    in >> ch >> p.x >> ch >> p.y >> ch;
 }
 void print(std::ostream& out, const Point& p)
 {
-
     out << "(" << p.x << ", " << p.y << ")";
 }
-
 double distanceBetween(const Point& a, const Point& b)
 {
     int dx = a.x - b.x;
