@@ -67,7 +67,7 @@ std::vector<std::string> fileToWords(const std::string& filename)
              cout << filename;
              if (!isspace(filename.back()))
              {
-                 cout << " ";
+                 cout << filename;
              }
         }
         getline(input, line);
