@@ -28,28 +28,60 @@ string STUDENT = "klee159"; // Add your Canvas/occ-email ID
 
 std::vector<std::string> fileToWords(const std::string& filename)
 {
-    ifstream in("words");
+    ifstream in(filename.c_str());
+
+
     if (in.fail())
     {
-        throw invalid_argument("file cannot be opened");
+        throw invalid_argument("invalid filename");
     }
     vector<string> results;
-    string word;
+    string line;
+    int i = 0;
+    getline (in, line);
+    char previous = 0;
+
     while (!in.eof())
     {
-        if (in.peek())
+        for (char c : filename)
+        {
+            getline(in, line);
+            results.push_back(line);
+            while (!in.eof() && (i == 0))
+            {
+                getline(in, line);
+            }
+            //if (c == previous)
+        }
+
+    }
+    in.close();
+    return results;
+
+
+    auto v = "excluded.txt";
+    string word;
+
+    if (in.fail())
+    {
+        throw invalid_argument("invalid filename");
+    }
+
+    while (!in.eof())
+    {
+        if (!empty(filename))
         {
             getline (in, word);
             results.push_back(word);
-             if (in.eof() && !in.fail())
+             if (in.eof())
              {
                 getline (in, word);
                 results.push_back(word);
-                break;
+
              }
         }
-        getline(in, word);
-        results.push_back(word);
+        getline(in, line);
+        results.push_back(line);
         // if (in.eof())
         // {
         //     std::getline(cin, filename);
@@ -59,33 +91,31 @@ std::vector<std::string> fileToWords(const std::string& filename)
     }
     return results;
 
-    in.open("excluded.txt");
+    // in.open("excluded.txt");
 
-    if (in.fail())
-    {
-        throw invalid_argument("invalid filename");
-    }
-    string line;
-    while (!in.eof())
-    {
-        if (in.peek())
-        {
-            getline(in, line);
-            results.push_back(line);
-            for (size_t i = 0, len = line.size(); i < len; i++)
-            {
-                if (in.eof() && !in.fail())
-                {
-                    getline(in, line);
-                    results.push_back(line);
-                }
+    // if (in.fail())
+    // {
+    //     throw invalid_argument("invalid filename");
+    // }
+    // while (
+    // {
+    //     string input;
+    //     istringstream in(input);
+    //     in >> input;
+    //     for (size_t i = 0, len = word.size(); i < len; i++)
+    //     {
+    //         if (in.eof() && !in.fail())
+    //         {
+    //             input++;
+    //             return input;
+    //         }
 
-            }
-            getline(in, line);
-            results.push_back(line);
-        }
-    }
-    return results;;
+    //     }
+    //     in >> input;
+    //     input++;
+    //     out << input;
+    // }
+    //return out;
 }
 
 
