@@ -13,7 +13,7 @@
 
 using namespace std;
 
-string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
+string STUDENT = "klee159"; // Add your Canvas/occ-email ID
 
 
 #include "h18.h"
@@ -37,13 +37,50 @@ std::vector<std::string> fileToWords(const std::string& filename)
     string word;
     while (!in.eof())
     {
-        results.push_back(word);
-        if (in.eof())
+        if (!empty(filename))
         {
-            break;
+            getline (in, word);
+            results.push_back(word);
+             if (in.eof())
+             {
+                getline (in, word);
+                results.push_back(word);
+                break;
+             }
         }
+        getline(in, word);
+        results.push_back(word);
+        // if (in.eof())
+        // {
+        //     std::getline(cin, filename);
+        //     results.push_back(results(word));;
+        // }
+
     }
     return results;
+
+    in.open("excluded.txt");
+
+    if (in.fail())
+    {
+        throw invalid_argument("invalid filename");
+    }
+    while (!in.eof())
+    {
+        string input;
+        for (size_t i = 0, len = word.size(); i < len; i++)
+        {
+            if (in.eof() && !in.fail())
+            {
+                cin >> input;
+                cout << input;
+            }
+
+        }
+        cin >> input;
+        cout << input;
+    }
+    return results;;
 }
 
 
