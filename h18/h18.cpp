@@ -28,101 +28,18 @@ string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
 
 std::vector<std::string> fileToWords(const std::string& filename)
 {
-
-    ifstream in(filename.c_str());
-
-
+    ifstream in("words");
     if (in.fail())
     {
-        throw invalid_argument("invalid filename");
+        throw invalid_argument("file cannot be opened");
     }
     vector<string> results;
-    string line;
-    string wordCount;
-    int i = 0;
-    int index = -1;
-    getline (in, line);
-
-    while (!in.eof())
-    {
-
-        i++;
-        getline (in, line);
-        results.push_back(line);
-
-        for (int j = 0; j <= i; j++)
-        {
-            cout << wordCount[j] << endl;
-
-
-        }
-
-        if (in.eof())
-        {
-            break;
-        }
-
-    }
-    return results;
-
-
-    auto v = "excluded.txt";
     string word;
-
-    if (in.fail())
-    {
-        throw invalid_argument("invalid filename");
-    }
-
     while (!in.eof())
     {
-        if (!empty(filename))
-        {
-            getline (in, word);
-            results.push_back(word);
-             if (in.eof())
-             {
-                getline (in, word);
-                results.push_back(word);
-
-             }
-        }
-        getline(in, line);
-        results.push_back(line);
-        // if (in.eof())
-        // {
-        //     std::getline(cin, filename);
-        //     results.push_back(results(word));;
-        // }
-
+        results.push_back(word);
     }
     return results;
-
-    // in.open("excluded.txt");
-
-    // if (in.fail())
-    // {
-    //     throw invalid_argument("invalid filename");
-    // }
-    // while (
-    // {
-    //     string input;
-    //     istringstream in(input);
-    //     in >> input;
-    //     for (size_t i = 0, len = word.size(); i < len; i++)
-    //     {
-    //         if (in.eof() && !in.fail())
-    //         {
-    //             input++;
-    //             return input;
-    //         }
-
-    //     }
-    //     in >> input;
-    //     input++;
-    //     out << input;
-    // }
-    //return out;
 }
 
 
