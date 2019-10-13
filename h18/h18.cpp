@@ -39,7 +39,6 @@ std::vector<std::string> fileToWords(const std::string& filename)
     string line;
     int i = 0;
     getline (in, line);
-    char previous = 0;
 
     while (!in.eof())
     {
@@ -47,15 +46,15 @@ std::vector<std::string> fileToWords(const std::string& filename)
         {
             getline(in, line);
             results.push_back(line);
-            while (!in.eof() && (i == 0))
+            if (in.eof())
             {
-                getline(in, line);
+                getline (in, line);
+                results.push_back(line);
+                break;
             }
-            //if (c == previous)
         }
 
     }
-    in.close();
     return results;
 
 
