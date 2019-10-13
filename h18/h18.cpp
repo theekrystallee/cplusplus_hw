@@ -55,7 +55,7 @@ std::vector<std::string> fileToWords(const std::string& filename)
         {
             cout << wordCount[j] << endl;
         }
-        if (in.eof())
+        if (isalpha(in.eof()))
         {
             break;
         }
