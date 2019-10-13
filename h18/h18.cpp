@@ -10,7 +10,7 @@
 #include <fstream>
 #include <cctype>
 #include <sstream>
-#define MAX 20
+#define MAX 10000
 
 using namespace std;
 
@@ -54,6 +54,14 @@ std::vector<std::string> fileToWords(const std::string& filename)
         for (int j = 0; j <= i; j++)
         {
             cout << wordCount[j] << endl;
+
+            for (j = 0; j < MAX; j++)
+            {
+                if (line == wordCount[j])
+                {
+                    cout << wordCount[j] << endl;
+                }
+            }
         }
         if (isalpha(in.eof()))
         {
