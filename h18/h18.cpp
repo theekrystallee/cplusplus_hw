@@ -36,7 +36,7 @@ std::vector<std::string> fileToWords(const std::string& filename)
 
     if (in.fail())
     {
-        cerr << "cannot reac file " << filename << endl;
+        throw invalid_argument("invalid " + filename);
     }
     string str;
     vector<string> word;
