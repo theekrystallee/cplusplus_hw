@@ -29,7 +29,11 @@ string STUDENT = "klee159"; // Add your Canvas/occ-email ID
 std::vector<std::string> fileToWords(const std::string& filename)
 {
     ifstream in(filename.c_str());
-
+    string s;
+    size_t len = s.size();
+    string first, last;
+    first = s.at(0);
+    last = s.substr(len - 1);
 
     if (in.fail())
     {
@@ -42,7 +46,7 @@ std::vector<std::string> fileToWords(const std::string& filename)
 
     while (!in.eof())
     {
-        for (char c : filename)
+        if (!empty(first) && !empty(last))
         {
             getline(in, line);
             results.push_back(line);
