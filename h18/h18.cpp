@@ -55,15 +55,16 @@ std::vector<std::string> fileToWords(const std::string& filename)
         {
             cout << wordCount[j] << endl;
 
-            for (j = 0; j < MAX; j++)
+
+        }
+        for (int j = 0; j < MAX; j++)
+        {
+            if (line == wordCount[j])
             {
-                if (line == wordCount[j])
-                {
-                    cout << wordCount[j] << endl;
-                }
+                cout << wordCount[j] << endl;
             }
         }
-        if (isalpha(in.eof()))
+        if (in.eof())
         {
             break;
         }
