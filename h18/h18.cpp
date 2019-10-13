@@ -10,7 +10,7 @@
 #include <fstream>
 #include <cctype>
 #include <sstream>
-#define MAX 100000
+#define MAX 20
 
 using namespace std;
 
