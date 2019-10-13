@@ -35,13 +35,13 @@ std::vector<std::string> fileToWords(const std::string& filename)
     }
     vector<string> results;
     string word;
-    while (!in.eof())
+    while (true)
     {
-        if (in.peek())
+        if (isalpha(in.peek()))
         {
             getline (in, word);
             results.push_back(word);
-             if (in.eof())
+             if (in.eof() && !in.fail())
              {
                 getline (in, word);
                 results.push_back(word);
