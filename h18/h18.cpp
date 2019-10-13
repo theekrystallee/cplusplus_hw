@@ -48,7 +48,7 @@ std::vector<std::string> fileToWords(const std::string& filename)
         while (in.peek())
         {
             getline(in, line);
-                results.push_back(line);
+            results.push_back(line);
             if (!empty(first) && !empty(last))
             {
                 getline(in, line);
@@ -65,8 +65,6 @@ std::vector<std::string> fileToWords(const std::string& filename)
     }
     return results;
 
-
-    auto v = "excluded.txt";
     string word;
 
     if (in.fail())
