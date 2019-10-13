@@ -1,6 +1,6 @@
 /**
- *  @author Put your name here
- *  @date Put the date here
+ *  @author Krystal Lee
+ *  @date Fall 2019
  *  @file h17.cpp
  */
 #include <string>

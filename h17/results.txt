@@ -1,0 +1,24 @@
+TESTING H17--WHO AM I?
+----------------------------------------------------------------------
+Checking function: Enumerated types -------------------
+   + toString(Rank::ACE)->Ace: Success
+   + toString(Rank::THREE)->3: Success
+   + toString(Rank::TEN)->10: Success
+   + toString(Rank::KING)->King: Success
+   + toString(Suit::HEARTS)->Hearts: Success
+   + toString(Suit::DIAMONDS)->Diamonds: Success
+----------------------------------------------------------------------
+  Tests passing 6/6 (100%).
+
+Checking function: Card output operator << -------------------
+   + Card c{Rank::ACE, Suit::SPADES}->Ace of Spades: Success
+   + Card c{Rank::QUEEN, Suit::HEARTS}->Queen of Hearts: Success
+   + Card c{Rank::JACK, Suit::DIAMONDS}->Jack of Diamonds: Success
+   + Card c{Rank::TWO, Suit::CLUBS}->2 of Clubs: Success
+----------------------------------------------------------------------
+  Tests passing 4/4 (100%).
+
+----------------------------------------------------------------------
+H17:WHO AM I?:ALL TESTS -- PASS 10/10 (100%).
+----------------------------------------------------------------------
+MTU3MDkyNzY2NTpXSE8gQU0gST86SDE3OjEwMC4wMCU=
