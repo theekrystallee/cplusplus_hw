@@ -10,6 +10,7 @@
 #include <fstream>
 #include <cctype>
 #include <sstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -42,7 +43,7 @@ std::vector<std::string> fileToWords(const std::string& filename)
 
     while (!in.eof())
     {
-        while (in.peek())
+        while (!empty(line))
         {
             getline(in, line);
             results.push_back(line);
@@ -71,6 +72,7 @@ std::vector<std::string> fileToWords(const std::string& filename)
 
     while (cin.peek())
     {
+
         getline (in, first);
         results.push_back(word);
         if (!empty(filename))
