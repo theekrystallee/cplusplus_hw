@@ -39,47 +39,48 @@ std::vector<std::string> fileToWords(const std::string& filename)
     vector<string> results;
     string line;
     int i = 0;
+    char previous = 0;
 
     while (!in.eof())
     {
-        getline(in, line);
-        results.push_back(line);
-        while (!in.eof() && (i == 0))
+        for (char c : filename)
         {
             getline(in, line);
+            results.push_back(line);
+            while (!in.eof() && (i == 0))
+            {
+                getline(in, line);
+            }
+            //if (c == previous)
         }
-        // if (in.eof())
-        // {
-        //     std::getline(cin, filename);
-        //     results.push_back(results(word));;
-        // }
 
     }
     in.close();
     return results;
 
-    ifstream input("excluded.txt");
+
+    auto v = "excluded.txt";
     string word;
 
-    if (input.fail())
+    if (in.fail())
     {
         throw invalid_argument("invalid filename");
     }
 
-    while (!input.eof())
+    while (!in.eof())
     {
         if (!empty(filename))
         {
-            getline (input, word);
+            getline (in, word);
             results.push_back(word);
-             if (input.eof())
+             if (in.eof())
              {
-                getline (input, word);
+                getline (in, word);
                 results.push_back(word);
 
              }
         }
-        getline(input, line);
+        getline(in, line);
         results.push_back(line);
         // if (in.eof())
         // {
@@ -88,7 +89,6 @@ std::vector<std::string> fileToWords(const std::string& filename)
         // }
 
     }
-    input.close();
     return results;
 
     // in.open("excluded.txt");
