@@ -29,11 +29,10 @@ string STUDENT = "klee159"; // Add your Canvas/occ-email ID
 std::vector<std::string> fileToWords(const std::string& filename)
 {
     ifstream in(filename.c_str());
-    string s;
-    size_t len = s.size();
+    size_t len = filename.size();
     string first, last;
-    first = s.at(0);
-    last = s.substr(len - 1);
+    first = filename.at(0);
+    last = filename.substr(len - 1);
 
     if (in.fail())
     {
