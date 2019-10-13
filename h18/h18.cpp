@@ -37,7 +37,7 @@ std::vector<std::string> fileToWords(const std::string& filename)
     string word;
     while (!in.eof())
     {
-        if (getline(in, word))
+        if (in >> word)
         {
             getline (in, word);
             results.push_back(word);
