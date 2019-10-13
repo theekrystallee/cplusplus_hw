@@ -35,7 +35,7 @@ std::vector<std::string> fileToWords(const std::string& filename)
     }
     vector<string> results;
     string word;
-    while (true)
+    while (!in.eof())
     {
         if (in.peek())
         {
