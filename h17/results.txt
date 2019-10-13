@@ -1,4 +1,4 @@
-TESTING H17--WHO AM I?
+TESTING H17--klee159
 ----------------------------------------------------------------------
 Checking function: Enumerated types -------------------
    + toString(Rank::ACE)->Ace: Success
@@ -19,6 +19,6 @@ Checking function: Card output operator << -------------------
   Tests passing 4/4 (100%).
 
 ----------------------------------------------------------------------
-H17:WHO AM I?:ALL TESTS -- PASS 10/10 (100%).
+H17:klee159:ALL TESTS -- PASS 10/10 (100%).
 ----------------------------------------------------------------------
-MTU3MDkyNzY2NTpXSE8gQU0gST86SDE3OjEwMC4wMCU=
+MTU3MDkyNzY4MzprbGVlMTU5OkgxNzoxMDAuMDAl
