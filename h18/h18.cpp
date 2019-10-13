@@ -37,7 +37,7 @@ std::vector<std::string> fileToWords(const std::string& filename)
     string word;
     while (true)
     {
-        if (isalpha(in.peek()))
+        if (in.peek())
         {
             getline (in, word);
             results.push_back(word);
