@@ -15,10 +15,7 @@ using namespace std;
 
 string STUDENT = "klee159"; // Add your Canvas/occ-email ID
 
-
 #include "h18.h"
-
-// Place your function definition here
 
 /**
  *  Opens a file and returns a vector<string> containing words.
