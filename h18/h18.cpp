@@ -82,8 +82,8 @@ std::vector<std::string> fileToWords(const std::string& filename)
             results.push_back(word);
              if (in.eof())
              {
+                results.push_back(last);
                 getline (in, word);
-                results.push_back(word);
 
              }
         }
