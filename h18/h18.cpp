@@ -32,21 +32,21 @@ std::vector<std::string> fileToWords(const std::string& filename)
     first = filename.at(0);
     last = filename.substr(len - 1);
 
-    if (in.fail())
-    {
-        throw invalid_argument("invalid filename");
-    }
+    if (in.fail()) { throw invalid_argument("invalid filename"); }
     vector<string> results;
     string line;
     int i = 0;
     getline (in, line);
 
-    while (!in.eof())
+    while (!in.fail())
     {
-        while (in >> line)
+        int count = 0;
+
+        while (i != 0)
         {
             getline(in, line);
             results.push_back(line);
+
             if (!empty(first) && !empty(last))
             {
                 getline(in, line);
