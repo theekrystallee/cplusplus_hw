@@ -66,8 +66,9 @@ std::vector<std::string> fileToWords(const std::string& filename)
         throw invalid_argument("invalid filename");
     }
 
-    while (!in.eof())
+    while (cin.peek())
     {
+
         if (!empty(filename))
         {
             getline (in, word);
