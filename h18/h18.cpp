@@ -54,6 +54,7 @@ std::vector<std::string> fileToWords(const std::string& filename)
     return results;
 
     ifstream input("excluded.txt");
+    string word;
 
     if (input.fail())
     {
@@ -64,10 +65,13 @@ std::vector<std::string> fileToWords(const std::string& filename)
     {
         if (!empty(filename))
         {
-             cout << filename;
-             if (!isspace(filename.back()))
+            getline (input, word);
+            results.push_back(word);
+             if (input.eof())
              {
-                 cout << filename;
+                getline (input, word);
+                results.push_back(word);
+
              }
         }
         getline(input, line);
