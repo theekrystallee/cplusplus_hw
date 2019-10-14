@@ -26,76 +26,91 @@ string STUDENT = "klee159"; // Add your Canvas/occ-email ID
 
 std::vector<std::string> fileToWords(const std::string& filename)
 {
-    ifstream in(filename.c_str());
-    size_t len = filename.size();
-    string first, last;
-    first = filename.at(0);
-    last = filename.substr(len - 1);
 
-    if (in.fail()) { throw invalid_argument("invalid filename"); }
-    vector<string> results;
-    string line;
-    int i = 0;
-    getline (in, line);
-
-    while (!in.fail())
-    {
-        int count = 0;
-
-        while (i != 0)
-        {
-            getline(in, line);
-            results.push_back(line);
-
-            if (!empty(first) && !empty(last))
-            {
-                getline(in, line);
-                results.push_back(line);
-                if (in.eof())
-                {
-                    getline (in, line);
-                    results.push_back(line);
-                    break;
-                }
-            }
-        }
-
-    }
-    return results;
-
-    string word;
+    ifstream in(filename);
 
     if (in.fail())
+        throw invalid_argument("cannot open " + filename + ". ");
+
+    vector <string> results;
+    string line, word;
+
+    while (getline(in, line))
     {
-        throw invalid_argument("invalid filename");
-    }
-
-    while (cin.peek())
-    {
-
-        getline (in, first);
-        results.push_back(word);
-        if (!empty(filename))
-        {
-            getline (in, word);
-            results.push_back(word);
-             if (in.eof())
-             {
-                results.push_back(last);
-                getline (in, word);
-
-             }
-        }
-        getline(in, line);
-        results.push_back(line);
-        // if (in.eof())
-        // {
-        //     std::getline(cin, filename);
-        //     results.push_back(results(word));;
-        // }
-
+        istringstream input(line);
+        while (input >> word) results.push_back(word);
     }
     return results;
+    // ifstream in(filename.c_str());
+    // size_t len = filename.size();
+    // string first, last;
+    // first = filename.at(0);
+    // last = filename.substr(len - 1);
+
+    // if (in.fail()) { throw invalid_argument("invalid filename"); }
+    // vector<string> results;
+    // string line;
+    // int i = 0;
+    // getline (in, line);
+
+    // while (!in.fail())
+    // {
+    //     int count = 0;
+
+    //     while (i != 0)
+    //     {
+    //         getline(in, line);
+    //         results.push_back(line);
+
+    //         if (!empty(first) && !empty(last))
+    //         {
+    //             getline(in, line);
+    //             results.push_back(line);
+    //             if (in.eof())
+    //             {
+    //                 getline (in, line);
+    //                 results.push_back(line);
+    //                 break;
+    //             }
+    //         }
+    //     }
+
+    // }
+    // return results;
+
+    // string word;
+
+    // if (in.fail())
+    // {
+    //     throw invalid_argument("invalid filename");
+    // }
+
+    // while (cin.peek())
+    // {
+
+    //     getline (in, first);
+    //     results.push_back(word);
+    //     if (!empty(filename))
+    //     {
+    //         getline (in, word);
+    //         results.push_back(word);
+    //          if (in.eof())
+    //          {
+    //             results.push_back(last);
+    //             getline (in, word);
+
+    //          }
+    //     }
+    //     getline(in, line);
+    //     results.push_back(line);
+    //     // if (in.eof())
+    //     // {
+    //     //     std::getline(cin, filename);
+    //     //     results.push_back(results(word));;
+    //     // }
+
+    // }
+    // return results;
 
     // in.open("excluded.txt");
 
