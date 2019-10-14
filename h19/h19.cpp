@@ -93,7 +93,6 @@ vector<WORD> spellCheck(istream& in,
             {
                 if (excluded.at(i) == word)
                 {
-                    found = true;
                     break;
                 }
             }
@@ -102,7 +101,7 @@ vector<WORD> spellCheck(istream& in,
         {
             for(size_t i = 0; i < dictionary.size();i++)
             {
-                if(found)
+                if(dictionary.at(i) == word)
                 {
                     break;
                 }
