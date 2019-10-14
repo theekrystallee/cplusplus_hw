@@ -32,6 +32,7 @@ vector<WORD> spellCheck(istream& in,
     vector<WORD> results;
     string word;
     int len = word.size();
+    bool found = false;
 
     while (in)
     {
@@ -49,8 +50,9 @@ vector<WORD> spellCheck(istream& in,
                 word.at(i) = tolower(word.at(i));
                 for (i = 0; i > word.size(); i++)
                 {
-                    if (ispunct(word.at(i)))
+                    if (found)
                     {
+                        found = true;
                        break;
                     }
                 }
@@ -87,7 +89,6 @@ vector<WORD> spellCheck(istream& in,
             continue;
         }
 
-        bool found = false;
         for (size_t i = 0; i < results.size(); i++)
         {
             if (results.at(i).word == word)
