@@ -7,17 +7,10 @@
 #include <cmath>
 using namespace std;
 
-string STUDENT = "klee159"; // Add your Canvas/occ-email ID
+string STUDENT = "klee159";
 
 #include "h17.h"
 
-// Write your functions here
-
-/**
- * Convert a Suit into the form "Clubs", "Hearts", etc.
- * @param s a Suit parameter
- * @return the string representation as described.
- */
 std::string toString(Suit s)
 {
     switch (s)
@@ -34,18 +27,12 @@ std::string toString(Suit s)
     }
     return "???";
 }
-
-/**
- * Convert a Rank into the form "Ace", "2", "3", "Queen", etc.
- * @param r a Rank parameter
- * @return the string representation as described.
- */
 std::string toString(Rank r)
 {
     switch (r)
     {
         case Rank::ACE: return "Ace";
-            break;
+            //break;
         case Rank::TWO: return "2";
             break;
         case Rank::THREE: return "3";
@@ -74,13 +61,6 @@ std::string toString(Rank r)
     }
     return "???";
 }
-
-/**
- * Prints a card in the form "Ace of Spades".
- * @param out the stream to print on.
- * @param c the card to print.
- * @return the stream after printing.
- */
 std::ostream& operator<<(std::ostream& out, const Card& c)
 {
     out << toString(c.rank) << " of " << toString(c.suit);
