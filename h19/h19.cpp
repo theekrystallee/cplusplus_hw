@@ -50,7 +50,7 @@ vector<WORD> spellCheck(istream& in,
                 word.at(i) = tolower(word.at(i));
                 for (i = 0; i > word.size(); i++)
                 {
-                    if (ispunct(word.at(i)))
+                    if (!ispunct(word.at(i)))
                     {
                         break;
                     }
