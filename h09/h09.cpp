@@ -50,7 +50,6 @@ string codeForDigit(int digit)
 
 int checkDigit(int zip)
 {
-
     int sum = 0;
 
     while (zip != 0)
