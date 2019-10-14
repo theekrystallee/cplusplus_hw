@@ -2,8 +2,8 @@ EXE = h15
 CXX = @g++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror -O0 -ggdb3 -fsanitize=signed-integer-overflow -fsanitize=undefined -Wno-unused-parameter -Wno-unused-variable -Wshadow
 LIBS = $(EXE)
-SRC = $(EXE).cpp tests.cpp
-OBJS = $(EXE).o tests.o
+SRC = $(EXE).cpp
+OBJS = $(EXE).o
 
 $(EXE): $(OBJS) makefile
 	$(CXX) $(CXXFLAGS) -o $@ $(OBJS) -L./ -l$(LIBS)
