@@ -43,7 +43,9 @@ vector<WORD> spellCheck(istream& in,
         {
             word.at(i) = tolower(word.at(i));
             if (isdigit(word.at(i)))
+            {
                 break;
+            }
         }
 
         int start = 0;
@@ -52,10 +54,10 @@ vector<WORD> spellCheck(istream& in,
             if (word.at(start) == '!' || word.at(start == ','))
             {
                 start++;
-                if (isdigit(word.at(start)))
-                {
-                    in.clear();
-                }
+                // if (isdigit(word.at(start)))
+                // {
+                //     in.clear();
+                // }
             }
             else
             {
