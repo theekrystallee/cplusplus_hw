@@ -48,7 +48,7 @@ vector<WORD> spellCheck(istream& in,
             {
                 if (isupper(word.at(i)))
                 {
-                    word = word.substr(start, len - start);
+                    in.clear();
                 }
                 word.at(i) = tolower(word.at(i));
                 if (ispunct(word.at(i)))
