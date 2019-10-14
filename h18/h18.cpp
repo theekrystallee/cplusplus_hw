@@ -1,6 +1,6 @@
 /**
- *  @author Put your name here
- *  @date Put the date here
+ *  @author Krystal Lee
+ *  @date Fall 2019 MW-AM
  *  @file h18.cpp
  */
 #include <iostream>
@@ -11,6 +11,7 @@
 #include <cctype>
 #include <sstream>
 #include <iomanip>
+#include <algorithm>
 
 using namespace std;
 
@@ -18,13 +19,7 @@ string STUDENT = "klee159"; // Add your Canvas/occ-email ID
 
 #include "h18.h"
 
-/**
- *  Opens a file and returns a vector<string> containing words.
- *  @param filename contains the path needed to open the file.
- *  @return a vector<string> of words.
- */
-
-std::vector<std::string> fileToWords(const std::string& filename)
+vector<string> fileToWords(const string& filename)
 {
 
     ifstream in(filename);
@@ -40,7 +35,10 @@ std::vector<std::string> fileToWords(const std::string& filename)
     while (getline(in, line))
     {
         istringstream input(line);
-        while (input >> word) results.push_back(word);
+        while (input >> word)
+        {
+            results.push_back(word);
+        }
     }
     return results;
 }

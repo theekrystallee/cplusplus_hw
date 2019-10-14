@@ -1,7 +1,7 @@
 /**
     @file h16.h
-    @author YOUR NAME HERE
-    @date what day and meeting time
+    @author Krystal Lee
+    @date Fall 2019 MW-AM
     Declarations for CS 150 Homework
 */
 #ifndef H16_H_
@@ -14,10 +14,16 @@
 #include <sstream>
 
 // Place your Point structure definition here
-
+struct Point
+{
+    int x, y;
+};
 
 // Place your Triangle structure definition here
-
+struct Triangle
+{
+    Point p1, p2, p3;
+};
 
 /**
  * Reads a point in the form x,y.
@@ -48,7 +54,6 @@ double distanceBetween(const Point& a, const Point& b);
  * @return the midpoint.
  */
 Point midpoint(const Point& a, const Point& b);
-
 /**
  * Calculates the perimeter of the Triangle t.
  * @param t the Triangle to examine.

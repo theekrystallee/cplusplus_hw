@@ -22,21 +22,18 @@ struct Card
     Rank rank;
     Suit suit;
 };
-
 /**
  * Convert a Suit into the form "Clubs", "Hearts", etc.
  * @param s a Suit parameter
  * @return the string representation as described.
  */
 std::string toString(Suit s);
-
 /**
  * Convert a Rank into the form "Ace", "2", "3", "Queen", etc.
  * @param r a Rank parameter
  * @return the string representation as described.
  */
 std::string toString(Rank r);
-
 /**
  * Prints a card in the form "Ace of Spades".
  * @param out the stream to print on.

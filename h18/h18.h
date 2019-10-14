@@ -12,6 +12,13 @@
  *  @param filename contains the path needed to open the file.
  *  @return a vector<string> of words.
  */
+// #ifndef H18_H_
+// #define H18_H_
+// struct word
+// {
+//     string word;
+// };
+// #endif
 std::vector<std::string> fileToWords(const std::string& filename);
 
 #endif

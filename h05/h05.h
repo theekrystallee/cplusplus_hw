@@ -1,6 +1,6 @@
 /**
     @file h05.h
-    @author Stephen Gilbert
+    @author Krystal Lee
     @version CS 150
 */
 #ifndef H05_H
