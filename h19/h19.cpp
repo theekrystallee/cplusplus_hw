@@ -78,11 +78,11 @@ vector<WORD> spellCheck(istream& in,
         //     else
         //         break;
         // }
-        // if (len > start)
-        // {
-        //     word = word.substr(start, len - start);
-        //     continue;
-        // }
+        if (len > start)
+        {
+            word = word.substr(start, len - start);
+            continue;
+        }
 
         bool found = false;
         for (size_t i = 0; i < results.size(); i++)
