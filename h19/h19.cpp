@@ -49,7 +49,7 @@ vector<WORD> spellCheck(istream& in,
         int start = 0;
         while (start < len)
         {
-            if (ispunct(word.at(start)))
+            if (word.at(start) == '!' || word.at(start == ','))
             {
                 start++;
                 if (isdigit(word.at(start)))
