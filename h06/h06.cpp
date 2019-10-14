@@ -26,12 +26,12 @@ string toFrenchGender(const string& s)
     {
         prefix = "le ";
      }
-    // else if (plain == "Israel" || plain == "Madagascar" || plain == "Sri Lanka"
-    //     || plain == "Singapore" || plain == "Monaco" || plain == "Cuba" || plain == "Cyprus"
-    //     || plain == "Zaire")
-    // {
-    //     prefix = "";
-    // }
+    else if (plain == "Israel" || plain == "Madagascar" || plain == "Sri Lanka"
+        || plain == "Singapore" || plain == "Monaco" || plain == "Cuba" || plain == "Cyprus"
+        || plain == "Zaire")
+    {
+        prefix = "";
+    }
     if (s.substr(0, 4) == islands || end == "es"|| end == "is" || end == "os" || end == "as")
     {
         prefix = "les ";
