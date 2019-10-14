@@ -52,6 +52,7 @@ vector<WORD> spellCheck(istream& in,
             else
                 break;
         }
+        in.clear();
         while (len > start)
         {
             if (ispunct(word.at(len - 1)))
