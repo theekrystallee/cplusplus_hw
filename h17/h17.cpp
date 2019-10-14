@@ -11,7 +11,7 @@ string STUDENT = "klee159";
 
 #include "h17.h"
 
-std::string toString(Suit s)
+string toString(Suit s)
 {
     switch (s)
     {
@@ -23,7 +23,7 @@ std::string toString(Suit s)
     }
     return "???";
 }
-std::string toString(Rank r)
+string toString(Rank r)
 {
     switch (r)
     {
@@ -44,7 +44,7 @@ std::string toString(Rank r)
     }
     return "???";
 }
-std::ostream& operator<<(std::ostream& out, const Card& c)
+ostream& operator<<(ostream& out, const Card& c)
 {
     out << toString(c.rank) << " of " << toString(c.suit);
     return out;
