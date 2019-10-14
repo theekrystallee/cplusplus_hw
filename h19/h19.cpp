@@ -48,11 +48,18 @@ vector<WORD> spellCheck(istream& in,
         while (start < len)
         {
             if (ispunct(word.at(start)))
+            {
                 start++;
+                if (isdigit(word.at(start)))
+                {
+                    in.clear();
+                }
+            }
             else
+            {
                 break;
+            }
         }
-        in.clear();
         while (len > start)
         {
             if (ispunct(word.at(len - 1)))
