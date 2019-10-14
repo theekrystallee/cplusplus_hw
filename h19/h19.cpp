@@ -32,7 +32,7 @@ vector<WORD> spellCheck(istream& in,
     vector<WORD> results;
     string word;
     int len = word.size();
-    int start = 0;
+
 
     while (in)
     {
@@ -63,6 +63,7 @@ vector<WORD> spellCheck(istream& in,
             // }
 
         }
+        int start = 0;
 
         //int start = 0;
         // while (start < len)
