@@ -16,13 +16,13 @@ std::string toString(Suit s)
     switch (s)
     {
         case Suit::DIAMONDS: return "Diamonds";
-            break;
+            //break;
         case Suit::SPADES: return "Spades";
-            break;
+            //break;
         case Suit::HEARTS: return "Hearts";
-            break;
+            //break;
         case Suit::CLUBS: return "Clubs";
-            break;
+            //break;
         default: return "???";
     }
     return "???";
