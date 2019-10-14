@@ -1,7 +1,7 @@
 /**
- *  @author Put your name here
- *  @date Put the date here
- *  @file h11.cpp
+ *  @author Krystal Lee
+ *  @date Fall 2019 MW-AM
+ *  @file h19.cpp
  */
 #include <iostream>
 #include <string>
@@ -41,6 +41,7 @@ vector<WORD> spellCheck(istream& in,
             break;
         }
         in >> word >> ws;
+
         for (size_t i = 0; i < word.size(); i++)
         {
             if (isalpha(word.at(i)) && (!ispunct(word.at(i))) && isupper(word.at(i)))
@@ -48,14 +49,9 @@ vector<WORD> spellCheck(istream& in,
                 word.at(i) = tolower(word.at(i));
                 if (ispunct(word.at(i)))
                 {
-                    in.clear();
                     break;
                 }
             }
-            // if (isdigit(in.get(word)))
-            // {
-            //     in
-            // }
 
         }
 
