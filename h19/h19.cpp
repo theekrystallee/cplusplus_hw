@@ -31,17 +31,87 @@ vector<WORD> spellCheck(istream& in,
 {
     vector<WORD> results;
     string word;
-    long long position = 0;
+    int len = word.size();
 
-    //pos_type tellg() = -1;
-    while (true)
+    while (in)
     {
-        if (position == 0)
+        long long pos = in.tellg();
+        if (pos == -1) break;
+
+        in >> word;
+        for (size_t i = 0; i < word.size(); i++)
+        word.at(i) = tolower(word.at(i));
+
+        int start = 0;
+        while (start < len)
         {
-            return results;
-            break;
+            if (ispunct(word.at(start)))
+                start++;
+            else
+                break;
         }
-        in >> word >> ws;
+        while (len > start)
+        {
+            if (ispunct(word.at(len - 1)))
+                len--;
+            else
+                break;
+        }
+        if (len > start)
+        {
+            word = word.substr(start, len - start);
+        }
+
+        bool found = false;
+        for (size_t i = 0; i < results.size(); i++)
+        {
+            if (results.at(i).word == word)
+            {
+                results.at(i).positions.push_back(pos);
+                found = true;
+                break;
+            }
+        }
+        if (!found)
+        {
+            for (size_t i = 0; i < excluded.size(); i++)
+            {
+                if (excluded.at(i) == word)
+                {
+                    found = true;
+                    break;
+                }
+            }
+        }
+        if(! found)
+        {
+            for(size_t i =0; i < dictionary.size();i++)
+            {
+                if(dictionary.at(i) == word)
+                {
+                    found = true;
+                    break;
+                }
+            }
+        }
+
+        if(! found)
+        {
+            WORD w;
+            w.word = word;
+            w.positions.push_back(pos);
+            results.push_back(w);
+        }
+    //pos_type tellg() = -1;
+    // while (true)
+    // {
+    //     if (position == 0)
+    //     {
+    //         return results;
+    //         break;
+    //     }
+    //     in >> word >> ws;
+
         // position (in.tellg()) static_cast<long long>);
         // if (in.eof() && in.tellg())
         // {
@@ -60,6 +130,8 @@ vector<WORD> spellCheck(istream& in,
         // }
 
     }
+    return results;
+
 }
 
 
