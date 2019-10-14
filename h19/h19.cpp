@@ -42,6 +42,8 @@ vector<WORD> spellCheck(istream& in,
         for (size_t i = 0; i < word.size(); i++)
         {
             word.at(i) = tolower(word.at(i));
+            if (isdigit(word.at(i)))
+                break;
         }
 
         int start = 0;
