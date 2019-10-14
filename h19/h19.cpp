@@ -32,6 +32,7 @@ vector<WORD> spellCheck(istream& in,
     vector<WORD> results;
     string word;
     int len = word.size();
+    int start = 0;
 
     while (in)
     {
@@ -47,7 +48,7 @@ vector<WORD> spellCheck(istream& in,
             {
                 if (isupper(word.at(i)))
                 {
-                    word.pop_back();
+                    word = word.substr(start, len - start);
                 }
                 word.at(i) = tolower(word.at(i));
                 if (ispunct(word.at(i)))
@@ -63,7 +64,7 @@ vector<WORD> spellCheck(istream& in,
 
         }
 
-        int start = 0;
+        //int start = 0;
         // while (start < len)
         // {
         //     if (word.at(start) == '!' || word.at(start == ','))
