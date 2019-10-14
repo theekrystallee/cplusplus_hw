@@ -1,6 +1,6 @@
 /**
- *  @author Put your name here
- *  @date Put the date here
+ *  @author Krystal Lee
+ *  @date Fall 2019 MW-AM
  *  @file h10.cpp
  */
 #include <iostream>
@@ -8,11 +8,65 @@
 #include <string>
 using namespace std;
 
-string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
+string STUDENT = "klee159"; // Add your Canvas/occ-email ID
 
 #include "h10.h"
 
-// Place your function definitions in this file.
+bool read(const string& agePrompt, int& age, bool check)
+{
+    string junk;
+    cout << agePrompt;
+    cin >> age;
+    if (cin.fail())
+    {
+        cin >> junk;
+        cin.clear();
+        check = false;
+    }
+    else
+    {
+        check = true;
+    }
+    return check;
+}
+
+bool read(const string& gpaPrompt, double& gpa, bool check)
+{
+    string junk;
+    cout << gpaPrompt;
+    cin >> gpa;
+    if (cin.fail())
+    {
+        cin >> junk;
+        cin.clear();
+        check = false;
+    }
+    else
+    {
+        cin.ignore(1024, '\n');
+        check = true;
+    }
+    return check;
+
+}
+
+bool read(const string& namePrompt, string& name, bool check = true)
+{
+    cout << namePrompt;
+    getline(cin, name);
+    return check;
+
+}
+
+bool read(char& ch, char dot = '.')
+{
+    cin.get(ch);
+    if (ch == dot)
+    {
+        return false;
+    }
+    return true;
+}
 
 ////////////////// STUDENT TESTING /////////////
 int run()
