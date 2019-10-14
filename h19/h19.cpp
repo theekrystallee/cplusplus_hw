@@ -36,12 +36,17 @@ vector<WORD> spellCheck(istream& in,
     while (in)
     {
         long long pos = in.tellg();
-        if (pos == -1) break;
-
-        in >> word;
+        if (pos == -1)
+        {
+            break;
+        }
+        in >> word >> ws;
         for (size_t i = 0; i < word.size(); i++)
         {
-            word.at(i) = tolower(word.at(i));
+            if (isalpha(word.at(i)) && (!ispunct(word.at(i))))
+            {
+                word.at(i) = tolower(word.at(i));
+            }
             // if (isdigit(word.at(i)))
             // {
             //     break;
@@ -93,6 +98,7 @@ vector<WORD> spellCheck(istream& in,
             {
                 if (excluded.at(i) == word)
                 {
+                    found = true;
                     break;
                 }
             }
@@ -103,6 +109,7 @@ vector<WORD> spellCheck(istream& in,
             {
                 if(dictionary.at(i) == word)
                 {
+                    found = true;
                     break;
                 }
             }
