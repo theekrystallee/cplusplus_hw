@@ -45,13 +45,17 @@ vector<WORD> spellCheck(istream& in,
         {
             if (isalpha(word.at(i)) && (!ispunct(word.at(i))))
             {
-                word.at(i) = tolower(word.at(i));
+                //word.at(i) = tolower(word.at(i));
                 if (ispunct(word.at(i)))
                 {
                     in.clear();
                     break;
                 }
             }
+            // if (isdigit(in.get(word)))
+            // {
+            //     in
+            // }
 
         }
 
