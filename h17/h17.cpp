@@ -16,13 +16,9 @@ std::string toString(Suit s)
     switch (s)
     {
         case Suit::DIAMONDS: return "Diamonds";
-            //break;
         case Suit::SPADES: return "Spades";
-            //break;
         case Suit::HEARTS: return "Hearts";
-            //break;
         case Suit::CLUBS: return "Clubs";
-            //break;
         default: return "???";
     }
     return "???";
@@ -32,31 +28,18 @@ std::string toString(Rank r)
     switch (r)
     {
         case Rank::ACE: return "Ace";
-            //break;
         case Rank::TWO: return "2";
-            //break;
         case Rank::THREE: return "3";
-            //break;
         case Rank::FOUR: return "4";
-            //break;
         case Rank::FIVE: return "5";
-            //break;
         case Rank::SIX: return "6";
-            //break;
         case Rank::SEVEN: return "7";
-            //break;
         case Rank::EIGHT: return "8";
-            //break;
         case Rank::NINE: return "9";
-            //break;
         case Rank::TEN: return "10";
-            //break;
         case Rank::QUEEN: return "Queen";
-            //break;
         case Rank::JACK: return "Jack";
-            //break;
         case Rank::KING: return "King";
-            //break;
         default: return "???";
     }
     return "???";
