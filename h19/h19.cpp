@@ -40,7 +40,9 @@ vector<WORD> spellCheck(istream& in,
 
         in >> word;
         for (size_t i = 0; i < word.size(); i++)
-        word.at(i) = tolower(word.at(i));
+        {
+            word.at(i) = tolower(word.at(i));
+        }
 
         int start = 0;
         while (start < len)
