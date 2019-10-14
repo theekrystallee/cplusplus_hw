@@ -23,17 +23,6 @@ int run()
     cout << "Time on My Hands" << endl;
     cout << string(50, '-') << endl;
 
-    // cout << "Give me a time (such as 3:57) and a duration\n"
-    // << "(such as 1:05), and I'll tell you the sum\n"
-    // << "(that is, the time that follows the given time\n"
-    // << "by the given duration), and difference (the time that\n"
-    // << "precedes the given time by that duration).\n" << endl;
-
-    // // Input
-
-    // cout << STUDENT << "-" << ASSISNGMENT << ": ";
-    // cout << "Time on My Hands" << endl;
-    // cout << string(50, '-') << endl;
 
     cout << "Give me a time (such as 3:57) and a duration\n"
     << "(such as 1:05), and I'll tell you the sum\n"
