@@ -43,8 +43,12 @@ vector<WORD> spellCheck(istream& in,
         in >> word >> ws;
         for (size_t i = 0; i < word.size(); i++)
         {
-            if (isalpha(word.at(i)) && (!ispunct(word.at(i))) && !isupper(word.at(i)))
+            if (isalpha(word.at(i)) && (!ispunct(word.at(i))))
             {
+                if (isupper(word.at(i)))
+                {
+                    results.at(i).positions.push_back(pos);
+                }
                 word.at(i) = tolower(word.at(i));
                 if (ispunct(word.at(i)))
                 {
