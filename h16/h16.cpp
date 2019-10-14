@@ -36,11 +36,13 @@ Point midpoint(const Point& a, const Point& b)
 }
 double perimeter(const Triangle& t)
 {
-    double perim = 0.0;
-    perim += distanceBetween(t.p1, t.p2);
-    perim += distanceBetween(t.p2, t.p3);
-    perim += distanceBetween(t.p3, t.p1);
-    return perim;
+    return distanceBetween(t.p1, t.p2) + distanceBetween(t.p2, t.p3)
+        + distanceBetween(t.p3, t.p1);
+    // double perim = 0.0;
+    // perim += distanceBetween(t.p1, t.p2);
+    // perim += distanceBetween(t.p2, t.p3);
+    // perim += distanceBetween(t.p3, t.p1);
+    // return perim;
 }
 /////////////// STUDENT TESTING ////////////////////
 int run()
