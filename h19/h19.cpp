@@ -47,9 +47,12 @@ vector<WORD> spellCheck(istream& in,
             if (isalpha(word.at(i)) && (!ispunct(word.at(i))) && isupper(word.at(i)))
             {
                 word.at(i) = tolower(word.at(i));
-                if (word.at(i) == '!' || ',' || '?')
+                for (i = 0; i <= 255; ++i)
                 {
-                    break;
+                    if (ispunct(i) != 0)
+                    {
+                       break;
+                    }
                 }
             }
 
