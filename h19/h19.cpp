@@ -57,10 +57,7 @@ vector<WORD> spellCheck(istream& in,
             else
                 break;
         }
-        if (len > start)
-        {
-            word = word.substr(start, len - start);
-        }
+        if (len > start) { word = word.substr(start, len - start);} continue;
 
         bool found = false;
         for (size_t i = 0; i < results.size(); i++)
@@ -102,32 +99,7 @@ vector<WORD> spellCheck(istream& in,
             w.positions.push_back(pos);
             results.push_back(w);
         }
-    //pos_type tellg() = -1;
-    // while (true)
-    // {
-    //     if (position == 0)
-    //     {
-    //         return results;
-    //         break;
-    //     }
-    //     in >> word >> ws;
-
-        // position (in.tellg()) static_cast<long long>);
-        // if (in.eof() && in.tellg())
-        // {
-        //     break;
-        // }
-        // in >> word >> ws;
-
-        // if (isalpha(word))
-        // {
-        //     tolower(word);
-
-        //     if (ispunct(static_cast<unsigned char>(word)))
-        //     {
-        //         word.erase();
-        //     }
-        // }
+        continue;
 
     }
     return results;
