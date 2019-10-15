@@ -44,7 +44,7 @@ vector<WORD> spellCheck(istream& in,
             return results;
             break;
         }
-        // in >> word >> ws;
+        in >> word >> ws;
 
         // for (size_t i = 0; i < word.size(); i++)
         // {
