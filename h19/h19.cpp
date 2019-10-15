@@ -37,7 +37,7 @@ vector<WORD> spellCheck(istream& in,
     int len = word.size();
     long long pos = 0;
 
-    while (true)
+    while (in)
     {
         if (pos == 0)
         {
@@ -46,21 +46,21 @@ vector<WORD> spellCheck(istream& in,
         }
         in >> word >> ws;
 
-        // for (size_t i = 0; i < word.size(); i++)
-        // {
-        //     if (isalpha(word.at(i)) && (!ispunct(word.at(i))) && isupper(word.at(i)))
-        //     {
-        //         word.at(i) = tolower(word.at(i));
-        //         for (i = 0; i > word.size(); i++)
-        //         {
-        //             if (!ispunct(word.at(i)))
-        //             {
-        //                 break;
-        //             }
-        //         }
-        //     }
+        for (size_t i = 0; i < word.size(); i++)
+        {
+            if (isalpha(word.at(i)) && (!ispunct(word.at(i))) && isupper(word.at(i)))
+            {
+                word.at(i) = tolower(word.at(i));
+                for (i = 0; i > word.size(); i++)
+                {
+                    if (!ispunct(word.at(i)))
+                    {
+                        break;
+                    }
+                }
+            }
 
-        // }
+        }
 
         // int start = 0;
         // while (start < len)
