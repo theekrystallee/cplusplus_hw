@@ -35,33 +35,34 @@ vector<WORD> spellCheck(istream& in,
     vector<WORD> results;
     string word;
     int len = word.size();
+    long long pos = 0;
 
-    while (in)
+    while (true)
     {
-        long long pos = in.tellg();
-        if (pos == -1)
+        if (pos == 0)
         {
+            return results;
             break;
         }
-        in >> word >> ws;
+        // in >> word >> ws;
 
-        for (size_t i = 0; i < word.size(); i++)
-        {
-            if (isalpha(word.at(i)) && (!ispunct(word.at(i))) && isupper(word.at(i)))
-            {
-                word.at(i) = tolower(word.at(i));
-                for (i = 0; i > word.size(); i++)
-                {
-                    if (!ispunct(word.at(i)))
-                    {
-                        break;
-                    }
-                }
-            }
+        // for (size_t i = 0; i < word.size(); i++)
+        // {
+        //     if (isalpha(word.at(i)) && (!ispunct(word.at(i))) && isupper(word.at(i)))
+        //     {
+        //         word.at(i) = tolower(word.at(i));
+        //         for (i = 0; i > word.size(); i++)
+        //         {
+        //             if (!ispunct(word.at(i)))
+        //             {
+        //                 break;
+        //             }
+        //         }
+        //     }
 
-        }
+        // }
 
-        int start = 0;
+        // int start = 0;
         // while (start < len)
         // {
         //     if (word.at(start) == '!' || word.at(start == ','))
@@ -84,51 +85,51 @@ vector<WORD> spellCheck(istream& in,
         //     else
         //         break;
         // }
-        if (len > start)
-        {
-            word = word.substr(start, len - start);
-            continue;
-        }
-        bool found = false;
-        for (size_t i = 0; i < results.size(); i++)
-        {
-            if (results.at(i).word == word)
-            {
-                results.at(i).positions.push_back(pos);
-                found = true;
-                break;
-            }
-        }
-        if (!found)
-        {
-            for (size_t i = 0; i < excluded.size(); i++)
-            {
-                if (excluded.at(i) == word)
-                {
-                    found = true;
-                    break;
-                }
-            }
-        }
-        if(! found)
-        {
-            for(size_t i = 0; i < dictionary.size();i++)
-            {
-                if(dictionary.at(i) == word)
-                {
-                    found = true;
-                    break;
-                }
-            }
-        }
+    //     if (len > start)
+    //     {
+    //         word = word.substr(start, len - start);
+    //         continue;
+    //     }
+    //     bool found = false;
+    //     for (size_t i = 0; i < results.size(); i++)
+    //     {
+    //         if (results.at(i).word == word)
+    //         {
+    //             results.at(i).positions.push_back(pos);
+    //             found = true;
+    //             break;
+    //         }
+    //     }
+    //     if (!found)
+    //     {
+    //         for (size_t i = 0; i < excluded.size(); i++)
+    //         {
+    //             if (excluded.at(i) == word)
+    //             {
+    //                 found = true;
+    //                 break;
+    //             }
+    //         }
+    //     }
+    //     if(! found)
+    //     {
+    //         for(size_t i = 0; i < dictionary.size();i++)
+    //         {
+    //             if(dictionary.at(i) == word)
+    //             {
+    //                 found = true;
+    //                 break;
+    //             }
+    //         }
+    //     }
 
-        if(! found)
-        {
-            WORD w;
-            w.word = word;
-            w.positions.push_back(pos);
-            results.push_back(w);
-        }
+    //     if(! found)
+    //     {
+    //         WORD w;
+    //         w.word = word;
+    //         w.positions.push_back(pos);
+    //         results.push_back(w);
+    //     }
 
     }
     return results;
