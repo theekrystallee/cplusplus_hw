@@ -85,43 +85,43 @@ vector<WORD> spellCheck(istream& in,
             else
                 break;
         }
-    //     if (len > start)
-    //     {
-    //         word = word.substr(start, len - start);
-    //         continue;
-    //     }
-    //     bool found = false;
-    //     for (size_t i = 0; i < results.size(); i++)
-    //     {
-    //         if (results.at(i).word == word)
-    //         {
-    //             results.at(i).positions.push_back(pos);
-    //             found = true;
-    //             break;
-    //         }
-    //     }
-    //     if (!found)
-    //     {
-    //         for (size_t i = 0; i < excluded.size(); i++)
-    //         {
-    //             if (excluded.at(i) == word)
-    //             {
-    //                 found = true;
-    //                 break;
-    //             }
-    //         }
-    //     }
-    //     if(! found)
-    //     {
-    //         for(size_t i = 0; i < dictionary.size();i++)
-    //         {
-    //             if(dictionary.at(i) == word)
-    //             {
-    //                 found = true;
-    //                 break;
-    //             }
-    //         }
-    //     }
+        if (len > start)
+        {
+            word = word.substr(start, len - start);
+            continue;
+        }
+        bool found = false;
+        for (size_t i = 0; i < results.size(); i++)
+        {
+            if (results.at(i).word == word)
+            {
+                results.at(i).positions.push_back(pos);
+                found = true;
+                break;
+            }
+        }
+        if (!found)
+        {
+            for (size_t i = 0; i < excluded.size(); i++)
+            {
+                if (excluded.at(i) == word)
+                {
+                    found = true;
+                    break;
+                }
+            }
+        }
+        if(! found)
+        {
+            for(size_t i = 0; i < dictionary.size();i++)
+            {
+                if(dictionary.at(i) == word)
+                {
+                    found = true;
+                    break;
+                }
+            }
+        }
 
     //     if(! found)
     //     {
