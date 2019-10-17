@@ -29,64 +29,204 @@ string STUDENT = "klee159"; // Add your Canvas/occ-email ID
     @return a vector of misspelled words, along with their position in the
         original file.
 */
+// #include<string> // to deal with strings
 
+#include <iostream> // for printf()
 
-#include<string.h>
-int main(int argc,char **arg)
+#include <cstdlib> // for exit(), perror()
+
+#include <fstream> // for ifstream
+
+#define MAX 10000
+
+using namespace std;
+
+//function declarations
+
+int spellCheck(string,string[]);
+
+void extendCheck(string,string[]);
+
+int main()
+
 {
-FILE *fp;//it is pointer to input file
 
-char str[80];//it will store input txt word
-char str2[80];//it will store dictionary word
-FILE *dictionary;//it is pointer to dictionary file
-int check;//it will check if word is found it is set to 1 otherwise it is zero
-if (arg == NULL)//it will check whether command line input is given
+std::ifstream ifs; //for reading the input file (dictionary)
+
+string voc;
+
+string word;
+
+string wordList[MAX];
+
+char command='y';
+
+int index=-1;
+
+ifs.open("american-english.txt");
+
+// if dictionary file is failed to open, print an error and exit:
+
+if (ifs.fail())
+
 {
-printf("no argumet is given");
+
+    cerr << "Could not open file"<< endl;
+
+    exit(2);
+
+}
+
+int i=0;
+
+//copy dictionary vocabulary into wordList array
+
+getline(ifs,voc);
+
+while ( !ifs.eof() )
+
+{
+
+    wordList[i]=voc;
+
+     i++;
+
+     getline(ifs,voc);
+
+}
+
+for(int j=0;j<=i;j++)
+
+     cout<<wordList[j]<<endl;
+
+//repeat untill user enters 'Q'-quit
+
+while(1)
+
+{
+
+              cout<<"Enter a word(Q for exit)"<<endl;
+
+              getline(std::cin,word); //user entered word is stored into word
+
+              if(word!="Q")
+
+              {
+
+                   cout<<"The given word: "<<word<<endl;
+
+                   //call spellCheck
+
+                   index=spellCheck(word,wordList);
+
+                   //if the user enters a word that exists in the dictionary, spellCheck returns the index of the word,
+
+                   //otherwise it returns -1
+
+                   if((index+1)>0)
+
+                   {
+
+                        cout<<"**Word is spelled correctly** "<<endl;
+
+                        cout<<endl;
+
+                   }
+
+                   //if the word does not exist in the dictionary
+
+                   else
+
+                   {
+
+                        cout<<"**Word is not spelled correctly**"<<endl;
+
+                        cout<<endl;
+
+                        //if the word is wrongly spelled, the spell check extends to find all possible single transpsitions
+
+                        extendCheck(word,wordList);
+
+                   }
+
+              }
+
+              //quits , if the user input is Q
+
+              else
+
+                   break;
+
+
+
+}
+
+cout<<"Thank you"<<endl;
+
+system("pause");
+
 return 0;
-}
-fp = fopen(arg[1],"r");//open the input file
-
-if(fp==NULL)
-{
-printf("Input file is not found");
-return 0;
-}
-/*open the dictionary file. the dictionary is in download folder u can add dictionary file in any folder and write the path name like */
-dictionary = fopen("Downloads/dictionary.txt","r");
-if(dictionary==NULL)
-{
-printf("dictionary file is not found");
-return 0;
-}
-
-check = 0;
-printf("Misspelled words in %s\n",arg[1]);
-while(!feof(fp))
-{
-fgets(str,79,fp);//read input word
-while(!feof(dictionary)&&(check==0))//loop will untill either dictionary is finished or word is found
-{
-fgets(str2,79,dictionary);//read dictionary word
-if (strcmp(str,str2)==0)//compare words
-{
-check=1;// if word is found it is set to 1
-}
-}
-if (check==0)
-printf("%s",str);//print the misspelt words
-else
-{
-
-check=0;//reset the check
-}
-rewind(dictionary);//reset the dictionary file pointer
 
 }
-//close both file
-fclose(dictionary);
-fclose(fp);
-return 0;
+
+//finds the index of the word and returns it. if the word not found, it returns -1
+
+int spellCheck(string word,string wordList[])
+
+{
+
+     for(int j=0;j<MAX;j++)
+
+     {
+
+          if(word==wordList[j])
+
+          {
+
+
+
+              return j;
+
+          }
+
+     }
+
+     return -1;
+
+}
+
+//finds and prints all possible single transpositions
+
+void extendCheck(string word,string wordList[])
+
+{
+
+     string temp;
+
+     int len = word.length() - 2;
+
+     for(int i=0;i<=len;i++)
+
+     {    temp=word;
+
+          std::swap(temp[i],temp[i+1]);
+
+          int t=spellCheck(temp,wordList);
+
+          if(t>0)
+
+          {
+
+              cout<<"did you mean '"<<wordList[t]<<"'"<<endl;
+
+              cout<<endl;
+
+          }
+
+
+
+     }
+
 }
 
 
