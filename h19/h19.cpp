@@ -48,9 +48,9 @@ vector<WORD> spellCheck(istream& in,
 
         for (size_t i = 0; i < word.size(); i++)
         {
-            if (isalpha(word.at(i)) && (!ispunct(word.at(i))) && isupper(word.at(i)))
+            if (isalpha(word.at(i)) && (ispunct(word.at(i))) && isupper(word.at(i)))
             {
-                if (isupper(word.at(i)) && word.front() != 'A' )
+                if (isupper(word.at(i)) && word.front() != 'A')
                 {
                     word.at(i) = tolower(word.at(i));
                 }
