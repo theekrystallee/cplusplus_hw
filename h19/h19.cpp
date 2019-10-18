@@ -63,28 +63,28 @@ vector<WORD> spellCheck(istream& in,
         }
 
         int start = 0;
-        // while (start < len)
-        // {
-        //     if (word.at(start) == '!' || word.at(start == ','))
-        //     {
-        //         start++;
-        //         // if (isdigit(word.at(start)))
-        //         // {
-        //         //     in.clear();
-        //         // }
-        //     }
-        //     else
-        //     {
-        //         break;
-        //     }
-        // }
-        // while (len > start)
-        // {
-        //     if (ispunct(word.at(len - 1)))
-        //         len--;
-        //     else
-        //         break;
-        // }
+        while (start < len)
+        {
+            if (word.at(start) == '!' || word.at(start == ','))
+            {
+                start++;
+                // if (isdigit(word.at(start)))
+                // {
+                //     in.clear();
+                // }
+            }
+            else
+            {
+                break;
+            }
+        }
+        while (len > start)
+        {
+            if (ispunct(word.at(len - 1)))
+                len--;
+            else
+                break;
+        }
         if (len > start)
         {
             word = word.substr(start, len - start);
@@ -123,13 +123,13 @@ vector<WORD> spellCheck(istream& in,
             }
         }
 
-        // if(! found)
-        // {
-        //     WORD w;
-        //     w.word = word;
-        //     w.positions.push_back(pos);
-        //     results.push_back(w);
-        // }
+        if(! found)
+        {
+            WORD w;
+            w.word = word;
+            w.positions.push_back(pos);
+            results.push_back(w);
+        }
 
     }
     return results;
