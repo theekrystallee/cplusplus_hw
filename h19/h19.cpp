@@ -65,7 +65,7 @@ vector<WORD> spellCheck(istream& in,
         int start = 0;
         while (start < len)
         {
-            if (word.at(start) == '!' || word.at(start == ','))
+            if (ispunct(word.at(start)))
             {
                 in.ignore(1024, '\n');
                 break;
@@ -78,9 +78,10 @@ vector<WORD> spellCheck(istream& in,
         while (len > start)
         {
             if (ispunct(word.at(len - 1)))
-                len--;
-            else
+            {
+                in.ignore(1024, '\n');
                 break;
+            }
         }
         if (len > start)
         {
