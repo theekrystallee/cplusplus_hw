@@ -70,12 +70,8 @@ vector<WORD> spellCheck(istream& in,
                 in.ignore(1024, '\n');
                 break;
             }
-            else
-            {
-                break;
-            }
         }
-        while (len > start)
+        if (len > start)
         {
             if (ispunct(word.at(len - 1)))
             {
