@@ -60,11 +60,6 @@ vector<WORD> spellCheck(istream& in,
                 //     }
                 // }
             }
-            else
-            {
-                in.ignore(1024, '\n');
-                break;
-            }
 
         }
 
