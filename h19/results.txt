@@ -1,4 +1,4 @@
-TESTING H19--klee159 
+TESTING H19--klee159
 ----------------------------------------------------------------------
 Checking function: spellCheck; Check number found. -------------------
    + some examples with only correct words->0: Success
@@ -32,6 +32,6 @@ Checking function: spellCheck; Multiple misspellings. -------------------
   Tests passing 3/3 (100%).
 
 ----------------------------------------------------------------------
-H19:klee159 :ALL TESTS -- PASS 15/15 (100%).
+H19:klee159:ALL TESTS -- PASS 15/15 (100%).
 ----------------------------------------------------------------------
-MTU3MTQ2NzIyODprbGVlMTU5IDpIMTk6MTAwLjAwJQ==
+MTU3MTQ2NzI0NjprbGVlMTU5OkgxOToxMDAuMDAl
