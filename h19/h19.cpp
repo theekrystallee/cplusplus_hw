@@ -53,7 +53,7 @@ vector<WORD> spellCheck(istream& in,
                 continue;
             }
         }
-        bool found = true;
+        bool found = false;
         // Search the list of misspelled words (results)->set found
         // If found word Then
         // Add position to results
@@ -62,8 +62,8 @@ vector<WORD> spellCheck(istream& in,
         {
             if (results.at(i).word == word)
             {
+                found = false;
                 results.at(i).positions.push_back(pos);
-                found = true;
                 break;
             }
         }
