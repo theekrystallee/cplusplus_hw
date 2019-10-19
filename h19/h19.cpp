@@ -98,18 +98,18 @@ vector<WORD> spellCheck(istream& in,
         //         break;
         //     }
         // }
-        if (len > start)
-        {
-            if (ispunct(word.at(len - 1)))
-            {
-                continue;
-            }
-        }
-        if (len > start)
-        {
-            word = word.substr(start, len - start);
-            continue;
-        }
+        // if (len > start)
+        // {
+        //     if (ispunct(word.at(len - 1)))
+        //     {
+        //         continue;
+        //     }
+        // }
+        // if (len > start)
+        // {
+        //     word = word.substr(start, len - start);
+        //     continue;
+        // }
         bool found = false;
         for (size_t i = 0; i < results.size(); ++i)
         {
