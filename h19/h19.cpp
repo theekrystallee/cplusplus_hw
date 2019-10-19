@@ -47,8 +47,8 @@ vector<WORD> spellCheck(istream& in,
         }
         in >> word >> ws;
 
-        // for (size_t i = 0; i < word.size(); ++i)
-        // {
+        for (size_t i = 0; i < word.size(); ++i)
+        {
         //     if (ispunct(word.at(i)))
         //     {
         //         word.erase(i--, 1);
@@ -66,20 +66,20 @@ vector<WORD> spellCheck(istream& in,
         //         word.erase(i, 1);
         //         i--;
         //     }
-
-        //     if ((word.at(i) >= 'a' && word.at(i) <= 'z') || (word.at(i) >= 'A' && word.at(i) <= 'Z'))
-        //     {
-        //         word.at(j++) = word.at(i);
-        //     }
-        //     if (!ispunct(word.at(i)) || !isupper(word.at(i)) || (isspace(word.at(i)) && (ispunct(word.at(i)))))
-        //     {
-        //         word.at(i) = tolower(word.at(i));
-        //         continue;
-        //     }
+            int j = 0;
+            if ((word.at(i) >= 'a' && word.at(i) <= 'z') || (word.at(i) >= 'A' && word.at(i) <= 'Z'))
+            {
+                word.at(j++) = word.at(i);
+            }
+            if (!ispunct(word.at(i)) || !isupper(word.at(i)) || (isspace(word.at(i)) && (ispunct(word.at(i)))))
+            {
+                word.at(i) = tolower(word.at(i));
+                continue;
+            }
         //     if (ispunct(word.at(i)))
         //     {
         //         word.erase(i--, 1);
-        //     }
+            }
 
                 //  if (ispunct(word.at(i)) && word.find('A'))
                 //     {
@@ -192,17 +192,17 @@ vector<WORD> spellCheck(istream& in,
                 }
             }
         }
-        // if(! found)
-        // {
-        //     for(size_t i = 0; i < dictionary.size(); ++i)
-        //     {
-        //         if(dictionary.at(i) == word)
-        //         {
-        //             found = true;
-        //             break;
-        //         }
-        //     }
-        // }
+        if(! found)
+        {
+            for(size_t i = 0; i < dictionary.size(); ++i)
+            {
+                if(dictionary.at(i) == word)
+                {
+                    found = true;
+                    break;
+                }
+            }
+        }
 
         if(! found)
         {
