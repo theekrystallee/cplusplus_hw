@@ -152,28 +152,28 @@ vector<WORD> spellCheck(istream& in,
             }
 
         }
-        if (found)
-        {
-            for (size_t i = 0; i < word.size(); i++)
-            {
-                if (word == word)
-                {
-                    found = false;
-                    continue;
-                }
-            }
-        }
-        if (!found)
-        {
-            for (size_t i = 0; i < excluded.size(); i++)
-            {
-                if (excluded.at(i) == word)
-                {
-                    found = true;
-                    break;
-                }
-            }
-        }
+        // if (found)
+        // {
+        //     for (size_t i = 0; i < word.size(); i++)
+        //     {
+        //         if (word == word)
+        //         {
+        //             found = false;
+        //             continue;
+        //         }
+        //     }
+        // }
+        // if (!found)
+        // {
+        //     for (size_t i = 0; i < excluded.size(); i++)
+        //     {
+        //         if (excluded.at(i) == word)
+        //         {
+        //             found = true;
+        //             break;
+        //         }
+        //     }
+        // }
         if(! found)
         {
             for(size_t i = 0; i < dictionary.size(); ++i)
