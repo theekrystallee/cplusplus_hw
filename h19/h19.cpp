@@ -59,6 +59,7 @@ vector<WORD> spellCheck(istream& in,
             {
                 word.at(j++) = word.at(i);
             }
+            word.at(j) = '\0';
             // if (!ispunct(word.at(i)) || !isupper(word.at(i)) || (isspace(word.at(i)) && (ispunct(word.at(i)) && isalpha(in.peek()))))
             // {
             //     word.at(i) = tolower(word.at(i));
