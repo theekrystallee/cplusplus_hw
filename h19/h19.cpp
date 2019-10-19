@@ -110,17 +110,17 @@ vector<WORD> spellCheck(istream& in,
         // Search the dictionary->found
         // If found word Then (Not misspelled) Go to top of loop
 
-        // if(! found)
-        // {
-        //     for(size_t i = 0; i < dictionary.size(); i++)
-        //     {
-        //         if(dictionary.at(i) == word)
-        //         {
-        //             found = true;
-        //             continue;
-        //         }
-        //     }
-        // }
+        if(! found)
+        {
+            for(size_t i = 0; i < dictionary.size(); i++)
+            {
+                if(dictionary.at(i) == word)
+                {
+                    found = true;
+                    continue;
+                }
+            }
+        }
 
         // if(! found)
         // {
@@ -137,13 +137,13 @@ vector<WORD> spellCheck(istream& in,
         // Add new WORD to results
         // End Loop
 
-        if(! found)
-        {
-            WORD newWord;
-            newWord.word = word;
-            newWord.positions.push_back(pos);
-            results.push_back(newWord);
-        }
+        // if(! found)
+        // {
+        //     WORD newWord;
+        //     newWord.word = word;
+        //     newWord.positions.push_back(pos);
+        //     results.push_back(newWord);
+        // }
     }
 
     // Return results (misspelled words and their positions)
