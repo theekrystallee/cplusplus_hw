@@ -12,6 +12,7 @@
 #include <istream>
 #include <sstream>
 #include <iomanip>
+#include <algorithm>
 
 using namespace std;
 
@@ -57,10 +58,7 @@ vector<WORD> spellCheck(istream& in,
             {
                 continue;
             }
-            if (isalpha(word.at(i)))
-            {
-                word.at(i);
-            }
+
 
 
             // if (word.at(i) == ' ' || word.at(i) == ',' || word.at(i) == ',')
