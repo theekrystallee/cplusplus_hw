@@ -53,6 +53,7 @@ vector<WORD> spellCheck(istream& in,
                 word.at(i) = tolower(word.at(i));
                 if (isupper(word.at(i)))
                 {
+                    in.ignore(1024, '\n');
                     continue;
                 }
 
