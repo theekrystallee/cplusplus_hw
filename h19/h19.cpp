@@ -51,9 +51,13 @@ vector<WORD> spellCheck(istream& in,
         {
             if (isalpha(word.at(i)) || !isupper(word.at(i)) || !isdigit(word.at(i)))
             {
-                word.at(i) = tolower(word.at(i));
 
-                //if ()
+
+                if (isspace(word.at(i)) || word.at(i) == '\0')
+                {
+                    word.at(i) = tolower(word.at(i));
+                    continue;
+                }
             }
 
             if (ispunct(word.at(i)))
