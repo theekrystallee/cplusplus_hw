@@ -57,6 +57,16 @@ vector<WORD> spellCheck(istream& in,
 
         // Search the list of misspelled words (results)->set found
         bool found = false;
+        for (size_t i = 0; i < results.size(); i++)
+        {
+            if (results.at(i).word == word)
+            {
+                results.at(i).positions.push_back(pos);
+                found = true;
+                break;
+            }
+        }
+
         // for (size_t i = 0; i < results.size(); i++)
         // {
         //     if (results.at(i).word == word)
@@ -67,19 +77,9 @@ vector<WORD> spellCheck(istream& in,
         //     }
         // }
 
-        // // for (size_t i = 0; i < results.size(); i++)
-        // // {
-        // //     if (results.at(i).word == word)
-        // //     {
-        // //         results.at(i).positions.push_back(pos);
-        // //         found = true;
-        // //         break;
-        // //     }
-        // // }
-
-        // // If found word Then
-        // // Add position to results
-        // // Go to top of loop
+        // If found word Then
+        // Add position to results
+        // Go to top of loop
 
         // if (found)
         // {
@@ -92,20 +92,20 @@ vector<WORD> spellCheck(istream& in,
         //         }
         //     }
         // }
-        // // ElseIf not found
-        // // Search the list of excluded words->found
-        // // If found word Then Go to top of loop
-        // if (!found)
-        // {
-        //     for (size_t i = 0; i < excluded.size(); i++)
-        //     {
-        //         if (excluded.at(i) == word)
-        //         {
-        //             found = true;
-        //             continue;
-        //         }
-        //     }
-        // }
+        // ElseIf not found
+        // Search the list of excluded words->found
+        // If found word Then Go to top of loop
+        if (!found)
+        {
+            for (size_t i = 0; i < excluded.size(); i++)
+            {
+                if (excluded.at(i) == word)
+                {
+                    found = true;
+                    continue;
+                }
+            }
+        }
         // ElseIf not found
         // Search the dictionary->found
         // If found word Then (Not misspelled) Go to top of loop
