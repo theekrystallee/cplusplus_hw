@@ -186,13 +186,13 @@ vector<WORD> spellCheck(istream& in,
             }
         }
 
-        if(! found)
-        {
-            WORD w;
-            w.word = word;
-            w.positions.push_back(pos);
-            results.push_back(w);
-        }
+        // if(! found)
+        // {
+        //     WORD w;
+        //     w.word = word;
+        //     w.positions.push_back(pos);
+        //     results.push_back(w);
+        // }
 
     }
     return results;
