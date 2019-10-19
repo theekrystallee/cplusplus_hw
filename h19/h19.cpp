@@ -116,11 +116,11 @@ vector<WORD> spellCheck(istream& in,
 
                 // }
 
-                if (isupper(word.at(i)) || islower(word.at(i)) || isalpha(word.at(i)) || isdigit(word.at(i)) || isspace(word.at(i)))
-                {
-                    word.at(i) = word.at(i);
-                    continue;
-                }
+                // if (isupper(word.at(i)) || islower(word.at(i)) || isalpha(word.at(i)) || isdigit(word.at(i)) || isspace(word.at(i)))
+                // {
+                //     word.at(i) = word.at(i);
+                //     continue;
+                // }
         }
 
             // }
