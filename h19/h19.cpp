@@ -46,7 +46,7 @@ vector<WORD> spellCheck(istream& in,
             break;
         }
         in >> word >> ws;
-        for (size_t i = 0; i < word.size(); ++i)
+        for (size_t i = 0; i < len; ++i)
         {
             word.at(i) = tolower(word.at(i));
 
