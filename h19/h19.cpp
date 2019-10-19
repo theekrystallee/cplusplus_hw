@@ -55,7 +55,6 @@ vector<WORD> spellCheck(istream& in,
                 word.erase(i--, 1);
             }
         }
-
         bool found = false;
         for (size_t i = 0; i < results.size(); i++)
         {
@@ -66,42 +65,39 @@ vector<WORD> spellCheck(istream& in,
                 break;
             }
         }
-
-        // }
-        // if (found)
-        // {
-        //     for (size_t i = 0; i < word.size(); i++)
-        //     {
-        //         if (word == word)
-        //         {
-        //             found = false;
-        //             break;
-        //         }
-        //     }
-        // }
-        // if (!found)
-        // {
-        //     for (size_t i = 0; i < excluded.size(); i++)
-        //     {
-        //         if (excluded.at(i) == word)
-        //         {
-        //             found = true;
-        //             continue;
-        //         }
-        //     }
-        // }
-        // if(! found)
-        // {
-        //     for(size_t i = 0; i < dictionary.size(); ++i)
-        //     {
-        //         if(dictionary.at(i) == word)
-        //         {
-        //             found = true;
-        //             break;
-        //         }
-        //     }
-        // }
-
+        if (found)
+        {
+            for (size_t i = 0; i < word.size(); i++)
+            {
+                if (word == word)
+                {
+                    found = false;
+                    break;
+                }
+            }
+        }
+        if (!found)
+        {
+            for (size_t i = 0; i < excluded.size(); i++)
+            {
+                if (excluded.at(i) == word)
+                {
+                    found = true;
+                    continue;
+                }
+            }
+        }
+        if(! found)
+        {
+            for(size_t i = 0; i < dictionary.size(); ++i)
+            {
+                if(dictionary.at(i) == word)
+                {
+                    found = true;
+                    break;
+                }
+            }
+        }
         if(! found)
         {
             WORD w;
