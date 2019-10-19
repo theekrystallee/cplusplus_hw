@@ -17,36 +17,53 @@ using namespace std;
 
 string STUDENT = "klee159"; // Add your Canvas/occ-email ID
 
-
 #include "h19.h"
 
-/**
-    Reads any stream until end-of-file. Returns a vector of misspelled words,
-    but not those words that have been excluded.
-    @param in the stream to read from
-    @param dictionary vector of string containing correct-spelled words.
-    @param excluded vector of string containing words to ignore.
-    @return a vector of misspelled words, along with their position in the
-        original file.
-*/
 vector<WORD> spellCheck(istream& in,
                     const vector<string>& dictionary,
                     const vector<string>& excluded)
 {
+    // Create the empty results vector
+
     vector<WORD> results;
     string word;
     size_t len = word.size();
 
+
+
+
+    // ElseIf not found
+    // Search the list of excluded words->found
+    // If found word Then Go to top of loop
+    // ElseIf not found
+    // Search the dictionary->found
+    // If found word Then (Not misspelled) Go to top of loop
+    // ElseIf not found Create a WORD, populate with word, position
+    // Add new WORD to results
+    // End Loop
+    // Return results (misspelled words and their positions)
+
+
+    // Read until end of file (while in)
+
     while (in)
     {
+
+        // Save current position (in.tellg()->cast to long long)
+        // If tellg() returns -1 (at end of file) Then Exit the loop
+
         long long pos = static_cast<long long>(in.tellg());
         if (pos == -1)
         {
-            break;
+            break; // Then Exit the loop
         }
+        // Read next word (in >> word >> ws)
         in >> word >> ws;
         for (size_t i = 0; i < word.size(); ++i)
         {
+
+            // Convert to lowercase, remove punctuation
+
             word.at(i) = tolower(word.at(i));
 
             if (ispunct(word.at(i)))
@@ -54,6 +71,9 @@ vector<WORD> spellCheck(istream& in,
                 word.erase(i--, 1);
             }
         }
+
+        // Search the list of misspelled words (results)->set found
+
         bool found = false;
         for (size_t i = 0; i < results.size(); i++)
         {
@@ -64,6 +84,11 @@ vector<WORD> spellCheck(istream& in,
                 break;
             }
         }
+
+        // If found word Then
+        // Add position to results
+        // Go to top of loop
+
         if (found)
         {
             for (size_t i = 0; i < word.size(); i++)
@@ -71,7 +96,7 @@ vector<WORD> spellCheck(istream& in,
                 if (word == word)
                 {
                     found = false;
-                    break;
+                    continue;
                 }
             }
         }
