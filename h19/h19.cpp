@@ -58,13 +58,12 @@ vector<WORD> spellCheck(istream& in,
             //         continue;
             //     }
             // }
+                word.at(i) = tolower(word.at(i));
 
                 if (ispunct(word.at(i)))
                 {
                     word.erase(i--, 1);
                 }
-                word.at(i) = tolower(word.at(i));
-
         //     else if (word == word)
         //     {
         //         continue;
