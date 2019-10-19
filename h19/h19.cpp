@@ -95,7 +95,7 @@ vector<WORD> spellCheck(istream& in,
         {
             if (ispunct(word.at(start)))
             {
-                continue;
+                break;
             }
         }
         if (len > start)
