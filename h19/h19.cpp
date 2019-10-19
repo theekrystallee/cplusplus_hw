@@ -29,7 +29,7 @@ vector<WORD> spellCheck(istream& in,
     size_t len = word.size();
 
     // Read until end of file (while in)
-    while (in >> word)
+    while (in)
     {
 
         // Save current position (in.tellg()->cast to long long)
