@@ -53,9 +53,11 @@ vector<WORD> spellCheck(istream& in,
                 continue;
             }
         }
-        // Search the list of misspelled words (results)->set found
         bool found = true;
-
+        // Search the list of misspelled words (results)->set found
+        // If found word Then
+        // Add position to results
+        // Go to top of loop
         for (size_t i = 0; i < results.size(); i++)
         {
             if (results.at(i).word == word)
@@ -65,19 +67,6 @@ vector<WORD> spellCheck(istream& in,
                 break;
             }
         }
-
-        // If found word Then
-        // Add position to results
-        // Go to top of loop
-
-        // }
-        // ElseIf not found
-        // Search the list of excluded words->found
-
-        // ElseIf not found
-        // Search the dictionary->found
-        // If found word Then (Not misspelled) Go to top of loop
-
         if(found)
         {
             for(size_t i = 0; i < dictionary.size(); i++)
@@ -89,11 +78,6 @@ vector<WORD> spellCheck(istream& in,
                 }
             }
         }
-
-        // ElseIf not found Create a WORD, populate with word, position
-        // Add new WORD to results
-        // End Loop
-
         if(found)
         {
             WORD w;
@@ -102,8 +86,6 @@ vector<WORD> spellCheck(istream& in,
             results.push_back(w);
         }
     }
-
-    // Return results (misspelled words and their positions)
     return results;
 }
 /////////////// STUDENT TESTING ////////////////////
