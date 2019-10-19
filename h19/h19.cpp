@@ -84,7 +84,7 @@ vector<WORD> spellCheck(istream& in,
             {
                 if(dictionary.at(i) == word)
                 {
-                    found = true;
+                    found = false;
                     continue;
                 }
             }
