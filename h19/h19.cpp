@@ -55,12 +55,14 @@ vector<WORD> spellCheck(istream& in,
                 {
                     //in.ignore(1024, '\n');
                     continue;
+
+                     if (ispunct(word.at(i)) || word.find('A'))
+                    {
+                        word.at(i) = toupper(word.at(i));
+                        continue;
+                    }
                 }
-                else if (ispunct(word.at(i)) || word.find('A'))
-                {
-                    word.at(i) = toupper(word.at(i));
-                    continue;
-                }
+
                 // else if (isspace(word.at(i)))
                 // {
                 //     continue;
