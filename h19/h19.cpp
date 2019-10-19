@@ -126,7 +126,6 @@ vector<WORD> spellCheck(istream& in,
             w.positions.push_back(pos);
             results.push_back(w);
         }
-        break;
     }
 
     // Return results (misspelled words and their positions)
