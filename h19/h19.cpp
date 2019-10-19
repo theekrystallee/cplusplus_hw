@@ -94,7 +94,7 @@ vector<WORD> spellCheck(istream& in,
         // Add new WORD to results
         // End Loop
 
-        if(! found)
+        if(found)
         {
             WORD w;
             w.word = word;
