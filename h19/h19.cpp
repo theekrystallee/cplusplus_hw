@@ -61,14 +61,14 @@ vector<WORD> spellCheck(istream& in,
                     word.at(i) = toupper(word.at(i));
                     continue;
                 }
-                else if (isspace(word.at(i)))
-                {
-                    continue;
-                }
-                else if (in.eof())
-                {
-                    break;
-                }
+                // else if (isspace(word.at(i)))
+                // {
+                //     continue;
+                // }
+                // else if (in.eof())
+                // {
+                //     break;
+                // }
 
                 //if (!ispunct(word.at(i)) ||)
                 // if (isupper(word.at(i)) && !isalpha(word.at(0)) && !isupper(word.at(len - 1)))
