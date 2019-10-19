@@ -43,6 +43,7 @@ vector<WORD> spellCheck(istream& in,
         }
         // Read next word (in >> word >> ws)
         in >> word >> ws;
+
         for (size_t i = 0; i < word.size(); ++i)
         {
             // Convert to lowercase, remove punctuation
@@ -56,8 +57,9 @@ vector<WORD> spellCheck(istream& in,
 
         // Search the list of misspelled words (results)->set found
         bool found = false;
-        for (size_t i = 0; i < results.size(); i++)
+        for (auto& e : results)
         {
+            size_t i = 0;
             if (results.at(i).word == word)
             {
                 results.at(i).positions.push_back(pos);
@@ -65,6 +67,16 @@ vector<WORD> spellCheck(istream& in,
                 break;
             }
         }
+
+        // for (size_t i = 0; i < results.size(); i++)
+        // {
+        //     if (results.at(i).word == word)
+        //     {
+        //         results.at(i).positions.push_back(pos);
+        //         found = true;
+        //         break;
+        //     }
+        // }
 
         // If found word Then
         // Add position to results
@@ -98,17 +110,30 @@ vector<WORD> spellCheck(istream& in,
         // ElseIf not found
         // Search the dictionary->found
         // If found word Then (Not misspelled) Go to top of loop
+
         if(! found)
         {
-            for(const string& e : dictionary)
+            for(size_t i = 0; i < dictionary.size(); i++)
             {
-                if(e == word)
+                if(dictionary.at(i) == word)
                 {
                     found = true;
                     continue;
                 }
             }
         }
+
+        // if(! found)
+        // {
+        //     for(const string& e : dictionary)
+        //     {
+        //         if(e == word)
+        //         {
+        //             found = true;
+        //             continue;
+        //         }
+        //     }
+        // }
         // ElseIf not found Create a WORD, populate with word, position
         // Add new WORD to results
         // End Loop
