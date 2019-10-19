@@ -12,7 +12,6 @@
 #include <istream>
 #include <sstream>
 #include <iomanip>
-#include <algorithm>
 
 using namespace std;
 
