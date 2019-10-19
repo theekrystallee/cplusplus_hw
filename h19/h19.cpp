@@ -116,10 +116,10 @@ vector<WORD> spellCheck(istream& in,
             if (results.at(i).word == word)
             {
                 results.at(i).positions.push_back(pos);
-                i++;
+                i = i + 1;
 
                 found = true;
-                continue;
+                break;
             }
 
         }
