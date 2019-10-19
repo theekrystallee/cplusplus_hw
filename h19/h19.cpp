@@ -59,7 +59,7 @@ vector<WORD> spellCheck(istream& in,
                     {
                          if (word.at(i) == '?' || word.at(i) == ',' || word.at(i) == '!')
                         {
-                            continue;
+                            break;
                         }
                         else
                         {
