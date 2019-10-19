@@ -136,7 +136,7 @@ vector<WORD> spellCheck(istream& in,
         }
         if(! found)
         {
-            for(size_t i = 0; i < dictionary.size();i++)
+            for(size_t i = 0; i < dictionary.size();++i)
             {
                 if(dictionary.at(i) == word)
                 {
