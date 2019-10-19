@@ -97,7 +97,7 @@ vector<WORD> spellCheck(istream& in,
                 // }
 
                 //if (!ispunct(word.at(i)) ||)
-                if (isupper(word.at(i)) && !isalpha(word.at(0)) && !isupper(word.at(len - 1)))
+                if (isupper(word.at(i)) && !isalpha(word.at(i)) && !isupper(word.at(i)))
                 {
                     word.at(i) = tolower(word.at(i));
                 }
