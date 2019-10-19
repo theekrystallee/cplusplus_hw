@@ -57,14 +57,15 @@ vector<WORD> spellCheck(istream& in,
         }
 
         bool found = false;
-        // for (size_t i = 0; i < results.size(); i++)
-        // {
-        //     if (results.at(i).word == word)
-        //     {
-        //         results.at(i).positions.push_back(pos);
-        //         found = true;
-        //         break;
-        //     }
+        for (size_t i = 0; i < results.size(); i++)
+        {
+            if (results.at(i).word == word)
+            {
+                results.at(i).positions.push_back(pos);
+                found = true;
+                break;
+            }
+        }
 
         // }
         // if (found)
