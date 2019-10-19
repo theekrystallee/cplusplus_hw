@@ -70,31 +70,31 @@ vector<WORD> spellCheck(istream& in,
         // Add position to results
         // Go to top of loop
 
-        if (found)
-        {
-            for (size_t i = 0; i < word.size(); i++)
-            {
-                if (word == word)
-                {
-                    found = false;
-                    continue;
-                }
-            }
-        }
-        // ElseIf not found
-        // Search the list of excluded words->found
-        // If found word Then Go to top of loop
-        // if (!found)
+        // if (found)
         // {
-        //     for (size_t i = 0; i < excluded.size(); i++)
+        //     for (size_t i = 0; i < word.size(); i++)
         //     {
-        //         if (excluded.at(i) == word)
+        //         if (word == word)
         //         {
-        //             found = true;
+        //             found = false;
         //             continue;
         //         }
         //     }
         // }
+        // ElseIf not found
+        // Search the list of excluded words->found
+        // If found word Then Go to top of loop
+        if (!found)
+        {
+            for (size_t i = 0; i < excluded.size(); i++)
+            {
+                if (excluded.at(i) == word)
+                {
+                    found = true;
+                    continue;
+                }
+            }
+        }
         // ElseIf not found
         // Search the dictionary->found
         // If found word Then (Not misspelled) Go to top of loop
@@ -121,6 +121,7 @@ vector<WORD> spellCheck(istream& in,
             results.push_back(newWord);
         }
     }
+
     // Return results (misspelled words and their positions)
     return results;
 }
