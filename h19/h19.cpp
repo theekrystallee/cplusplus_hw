@@ -34,13 +34,11 @@ vector<WORD> spellCheck(istream& in,
     {
 
         // Save current position (in.tellg()->cast to long long)
-        // If tellg() returns -1 (at end of file) Then Exit the loop
-
         long long pos = static_cast<long long>(in.tellg());
-        if (pos == -1) break;
-        // {
-        //     break; // Then Exit the loop
-        // }
+
+        // If tellg() returns -1 (at end of file) Then Exit the loop
+        if (pos == -1) break; // then exit the loop
+
         // Read next word (in >> word >> ws)
         in >> word >> ws;
 
