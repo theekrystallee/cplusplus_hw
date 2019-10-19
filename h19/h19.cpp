@@ -46,7 +46,7 @@ vector<WORD> spellCheck(istream& in,
         }
         in >> word >> ws;
 
-        for (size_t i = 0; i < word.size(); i++)
+        for (size_t i = 0; i < word.size() - 1; i++)
         {
             if (!ispunct(word.at(i)) || !isupper(word.at(i)) || (isspace(word.at(i)) && (ispunct(word.at(i)) && isalpha(in.peek()))))
             {
@@ -54,8 +54,7 @@ vector<WORD> spellCheck(istream& in,
 
                 while (len > 0)
                 {
-
-                    for (i = 0; i < word.size(); i++)
+                    for (i = 0; i < word.size() - 1; i++)
                     {
                          if (ispunct(word.at(i)))
                         {
@@ -128,7 +127,7 @@ vector<WORD> spellCheck(istream& in,
             continue;
         }
         bool found = false;
-        for (size_t i = 0; i < results.size(); i++)
+        for (size_t i = 0; i < results.size() - 1; i++)
         {
             if (results.at(i).word == word)
             {
@@ -140,7 +139,7 @@ vector<WORD> spellCheck(istream& in,
         }
         if (!found)
         {
-            for (size_t i = 0; i < excluded.size(); i++)
+            for (size_t i = 0; i < excluded.size() - 1; i++)
             {
                 if (excluded.at(i) == word)
                 {
