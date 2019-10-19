@@ -97,20 +97,20 @@ vector<WORD> spellCheck(istream& in,
                 // }
 
                 //if (!ispunct(word.at(i)) ||)
-                // if (isupper(word.at(i)) && !isalpha(word.at(0)) && !isupper(word.at(len - 1)))
-                // {
-                //     word.at(i) = tolower(word.at(i));
-                // }
-                // else
-                //     continue;
-
-                for (i = 0; i > word.size(); i++)
+                if (isupper(word.at(i)) && !isalpha(word.at(0)) && !isupper(word.at(len - 1)))
                 {
-                    if (!ispunct(word.at(i)))
-                    {
-                        break;
-                    }
+                    word.at(i) = tolower(word.at(i));
                 }
+                else
+                    continue;
+
+                // for (i = 0; i > word.size(); i++)
+                // {
+                //     if (!ispunct(word.at(i)))
+                //     {
+                //         break;
+                //     }
+                // }
                 // if (isalpha(word.at(i)) && word.front() == 'i' && word.end() == 's')
                 // {
 
