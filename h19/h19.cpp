@@ -57,9 +57,8 @@ vector<WORD> spellCheck(istream& in,
 
         // Search the list of misspelled words (results)->set found
         bool found = false;
-        for (auto& e : results)
+        for (size_t i = 0; i < results.size(); i++)
         {
-            size_t i = 0;
             if (results.at(i).word == word)
             {
                 results.at(i).positions.push_back(pos);
