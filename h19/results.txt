@@ -1,4 +1,4 @@
-TESTING H19--klee159
+TESTING H19--klee159 
 ----------------------------------------------------------------------
 Checking function: spellCheck; Check number found. -------------------
    + some examples with only correct words->0: Success
@@ -7,22 +7,22 @@ Checking function: spellCheck; Check number found. -------------------
    + facebook speak r u l8 2 wrk->4: Success
   Check some case and punctuation
    + SEE cAsE does NOT MaTTer->0: Success
-   X !punctuation should not make, any difference?: found->0: Failed
+   + !punctuation should not make, any difference?->0: Success
   Some words spelled correctly, but not handled correctly.
   Could use a UK dictionary, for instance, or add slang.
    + Two words that are OK but coloured wrong->2: Success
   Or update the dictionary with acronyms
-   X Which is better, iOs or Android?: found->1: Failed
+   + Which is better, iOs or Android?->1: Success
 ----------------------------------------------------------------------
-  Tests passing 6/8 (75%).
+  Tests passing 8/8 (100%).
 
 Checking function: spellCheck; Check words found. -------------------
    + an exaple with twoo misspelled words->exaple twoo: Success
    + facebook speak r u l8 2 wrk->facebook l8 2 wrk: Success
    + Two words that are OK but coloured wrong->ok coloured: Success
-   X Which is better, iOs or Android?: found->better, ios android?: Failed
+   + Which is better, iOs or Android?->ios: Success
 ----------------------------------------------------------------------
-  Tests passing 3/4 (75%).
+  Tests passing 4/4 (100%).
 
 Checking function: spellCheck; Multiple misspellings. -------------------
    + zots frog zots ape zots->{0, 10, 19}: Success
@@ -32,6 +32,6 @@ Checking function: spellCheck; Multiple misspellings. -------------------
   Tests passing 3/3 (100%).
 
 ----------------------------------------------------------------------
-H19:klee159:ALL TESTS -- PASS 12/15 (80%).
+H19:klee159 :ALL TESTS -- PASS 15/15 (100%).
 ----------------------------------------------------------------------
-MTU3MTA5MTgyMDprbGVlMTU5OkgxOTo4MC4wMCU=
+MTU3MTQ2NzIyODprbGVlMTU5IDpIMTk6MTAwLjAwJQ==
