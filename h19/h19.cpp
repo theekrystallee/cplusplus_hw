@@ -49,21 +49,21 @@ vector<WORD> spellCheck(istream& in,
 
         for (size_t i = 0; i < len; i++)
         {
-            if (isalpha(word.at(i)) || !isupper(word.at(i)) || !isdigit(word.at(i)))
-            {
+            // if (isalpha(word.at(i)) || !isupper(word.at(i)) || !isdigit(word.at(i)))
+            // {
 
 
-                if (isspace(word.at(i)) || word.at(i) == '\0')
+            //     if (isspace(word.at(i)) || word.at(i) == '\0')
+            //     {
+            //         word.at(i) = tolower(word.at(i));
+            //         continue;
+            //     }
+            // }
+
+                if (ispunct(word.at(i)))
                 {
-                    word.at(i) = tolower(word.at(i));
-                    continue;
+                    word.erase(i--, 1);
                 }
-            }
-
-            if (ispunct(word.at(i)))
-            {
-                word.erase(i--, 1);
-            }
 
         //     else if (word == word)
         //     {
