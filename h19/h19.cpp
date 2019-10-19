@@ -47,7 +47,7 @@ vector<WORD> spellCheck(istream& in,
         in >> word >> ws;
         int j = 0;
 
-        for (int i = 0; word.at(i) != '\0'; i++)
+        for (size_t i = 0; i < word.size(); i++)
         {
             // if (word.at(i) == ' ' || word.at(i) == ',' || word.at(i) == ',')
             // {
