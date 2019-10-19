@@ -104,13 +104,13 @@ vector<WORD> spellCheck(istream& in,
                 else
                     break;
 
-                // for (i = 0; i > word.size(); i++)
-                // {
-                //     if (!ispunct(word.at(i)))
-                //     {
-                //         break;
-                //     }
-                // }
+                for (i = 0; i > word.size(); i++)
+                {
+                    if (!ispunct(word.at(i)))
+                    {
+                        break;
+                    }
+                }
                 // if (isalpha(word.at(i)) && word.front() == 'i' && word.end() == 's')
                 // {
 
