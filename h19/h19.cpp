@@ -61,11 +61,11 @@ vector<WORD> spellCheck(istream& in,
 
 
 
-            // if (word.at(i) == ' ' || word.at(i) == ',' || word.at(i) == ',')
-            // {
-            //     word.erase(i, 1);
-            //     i--;
-            // }
+            if (word.at(i) == ' ' || word.at(i) == ',' || word.at(i) == ',')
+            {
+                word.erase(i, 1);
+                i--;
+            }
 
             // if ((word.at(i) >= 'a' && word.at(i) <= 'z') || (word.at(i) >= 'A' && word.at(i) <= 'Z'))
             // {
