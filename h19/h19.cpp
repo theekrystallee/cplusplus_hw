@@ -55,7 +55,7 @@ vector<WORD> spellCheck(istream& in,
             }
             else if (word == word)
             {
-                break;
+                continue;
             }
 
 
