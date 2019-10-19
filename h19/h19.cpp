@@ -52,7 +52,7 @@ vector<WORD> spellCheck(istream& in,
             {
                 word.at(i) = tolower(word.at(i));
 
-                while (true)
+                while (len > 0)
                 {
 
                     for (i = 0; i < word.size(); i++)
