@@ -101,7 +101,6 @@ vector<WORD> spellCheck(istream& in,
             newWord.word = word;
             newWord.positions.push_back(pos);
             results.push_back(newWord);
-            break;
         }
     }
 
