@@ -54,7 +54,7 @@ vector<WORD> spellCheck(istream& in,
             }
         }
         // Search the list of misspelled words (results)->set found
-        bool found = false;
+        bool found = true;
 
         for (size_t i = 0; i < results.size(); i++)
         {
@@ -78,7 +78,7 @@ vector<WORD> spellCheck(istream& in,
         // Search the dictionary->found
         // If found word Then (Not misspelled) Go to top of loop
 
-        if(! found)
+        if(found)
         {
             for(size_t i = 0; i < dictionary.size(); i++)
             {
@@ -94,7 +94,7 @@ vector<WORD> spellCheck(istream& in,
         // Add new WORD to results
         // End Loop
 
-        if(!found)
+        if(found)
         {
             WORD w;
             w.word = word;
