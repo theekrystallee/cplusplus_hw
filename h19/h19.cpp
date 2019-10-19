@@ -84,17 +84,17 @@ vector<WORD> spellCheck(istream& in,
         // ElseIf not found
         // Search the list of excluded words->found
         // If found word Then Go to top of loop
-        if (!found)
-        {
-            for (size_t i = 0; i < excluded.size(); i++)
-            {
-                if (excluded.at(i) == word)
-                {
-                    found = true;
-                    continue;
-                }
-            }
-        }
+        // if (!found)
+        // {
+        //     for (size_t i = 0; i < excluded.size(); i++)
+        //     {
+        //         if (excluded.at(i) == word)
+        //         {
+        //             found = true;
+        //             continue;
+        //         }
+        //     }
+        // }
         // ElseIf not found
         // Search the dictionary->found
         // If found word Then (Not misspelled) Go to top of loop
