@@ -52,17 +52,23 @@ vector<WORD> spellCheck(istream& in,
             {
                 word.at(i) = tolower(word.at(i));
 
-                while (!in.eof())
+                while (true)
                 {
-                    if (word.at(i) == '?' || word.at(i) == ',' || word.at(i) == '!')
+
+                    for (i = 0; i < word.size(); i++)
                     {
-                        continue;
+                         if (word.at(i) == '?' || word.at(i) == ',' || word.at(i) == '!')
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
-                    else
-                    {
-                        break;
-                    }
-                    continue;
+
+
+
                 }
                 //  if (ispunct(word.at(i)) && word.find('A'))
                 //     {
