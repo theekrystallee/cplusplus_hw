@@ -115,7 +115,9 @@ vector<WORD> spellCheck(istream& in,
         {
             if (results.at(i).word == word)
             {
+                ++++i;
                 results.at(i).positions.push_back(pos);
+
                 found = true;
                 break;
             }
@@ -139,7 +141,7 @@ vector<WORD> spellCheck(istream& in,
                 if(dictionary.at(i) == word)
                 {
                     found = true;
-                    continue;
+                    break;
                 }
             }
         }
