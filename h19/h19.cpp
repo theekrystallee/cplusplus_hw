@@ -49,7 +49,10 @@ vector<WORD> spellCheck(istream& in,
 
         for (size_t i = 0; i < len; i++)
         {
-            word.at(i) = tolower(word.at(i));
+            if (isalpha(word.at(i)) && word.at(i) != 'A')
+            {
+                word.at(i) = tolower(word.at(i));
+            }
 
             if (ispunct(word.at(i)))
             {
