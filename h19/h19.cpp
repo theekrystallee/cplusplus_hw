@@ -60,7 +60,6 @@ vector<WORD> spellCheck(istream& in,
             if (isalpha(word.at(i)))
             {
                 word.at(i);
-                continue;
             }
 
 
