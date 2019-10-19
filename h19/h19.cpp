@@ -57,6 +57,10 @@ vector<WORD> spellCheck(istream& in,
             {
                 continue;
             }
+            if (isalpha(word.at(i)))
+            {
+                continue;
+            }
 
 
             // if (word.at(i) == ' ' || word.at(i) == ',' || word.at(i) == ',')
