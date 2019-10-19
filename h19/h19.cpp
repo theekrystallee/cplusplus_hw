@@ -116,7 +116,7 @@ vector<WORD> spellCheck(istream& in,
                 }
                 if (islower(word.at(i)))
                 {
-                    word.at(i) = tolower(word.at(i));
+                    word.at(i) = word.at(i);
                     continue;
                 }
 
