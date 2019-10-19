@@ -52,11 +52,13 @@ vector<WORD> spellCheck(istream& in,
             {
                 word.at(i) = tolower(word.at(i));
                 continue;
+
+                if (ispunct(word.at(i)))
+                {
+                    word.erase(i--, 1);
+                }
             }
-            else if (ispunct(word.at(i)))
-            {
-                word.erase(i--, 1);
-            }
+
                 //  if (ispunct(word.at(i)) && word.find('A'))
                 //     {
                 //         word.at(i) = toupper(word.at(i));
