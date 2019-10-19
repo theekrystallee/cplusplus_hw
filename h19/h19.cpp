@@ -45,19 +45,27 @@ vector<WORD> spellCheck(istream& in,
             break;
         }
         in >> word >> ws;
+        int j = 0;
 
         for (size_t i = 0; i < word.size(); i++)
         {
-            if (!ispunct(word.at(i)) || !isupper(word.at(i)) || (isspace(word.at(i)) && (ispunct(word.at(i)) && isalpha(in.peek()))))
+            if (word.at(i) == ' ' || word.at(i) == ',' || word.at(i) == ',')
             {
-                word.at(i) = tolower(word.at(i));
-                continue;
-
-                if (ispunct(word.at(i)))
-                {
-                    word.erase(i--, 1);
-                }
+                word.erase(i, 1);
+                i--;
             }
+
+            // if (word.at(i) >= 'a' || word.at(i) <= 'A')
+            // if (!ispunct(word.at(i)) || !isupper(word.at(i)) || (isspace(word.at(i)) && (ispunct(word.at(i)) && isalpha(in.peek()))))
+            // {
+            //     word.at(i) = tolower(word.at(i));
+            //     continue;
+
+            //     if (ispunct(word.at(i)))
+            //     {
+            //         word.erase(i--, 1);
+            //     }
+
 
                 //  if (ispunct(word.at(i)) && word.find('A'))
                 //     {
