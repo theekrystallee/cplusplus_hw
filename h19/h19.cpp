@@ -50,7 +50,7 @@ vector<WORD> spellCheck(istream& in,
         {
             if (isalpha(word.at(i)) && (ispunct(word.at(i))) && isupper(word.at(i)))
             {
-                if (isupper(word.at(i)) && word.front() == 'A')
+                if (isupper(word.at(i)) && !isalpha(word.at(0)) && !isupper(word.at(len - 1)))
                 {
                     word.at(i) = tolower(word.at(i));
                 }
