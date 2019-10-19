@@ -112,7 +112,7 @@ vector<WORD> spellCheck(istream& in,
 
                 if (isupper(word.at(i)))
                 {
-                    word.at(i) = toupper(word.at(i));
+                    word.at(i) = word.at(i);
                 }
                 if (islower(word.at(i)))
                 {
