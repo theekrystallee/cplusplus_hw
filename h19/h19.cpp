@@ -40,7 +40,7 @@ vector<WORD> spellCheck(istream& in,
 
     while (in)
     {
-        long long pos = in.tellg();
+        long long pos = static_cast<long long>(in.tellg());
         if (pos == -1)
         {
             break;
