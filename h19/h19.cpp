@@ -79,46 +79,46 @@ vector<WORD> spellCheck(istream& in,
         //         word.erase(i--, 1);
 
 
-                 if (ispunct(word.at(i)) && word.find('A'))
-                {
-                    word.at(i) = toupper(word.at(i));
-                    continue;
-                }
-
-                else if (isspace(word.at(i)))
-                {
-                    continue;
-                }
-                // else if (in.eof())
+                //  if (ispunct(word.at(i)) && word.find('A'))
                 // {
+                //     word.at(i) = toupper(word.at(i));
+                //     continue;
+                // }
+
+                // else if (isspace(word.at(i)))
+                // {
+                //     continue;
+                // }
+                // // else if (in.eof())
+                // // {
+                // //     break;
+                // // }
+
+                // //if (!ispunct(word.at(i)) ||)
+                // if (isupper(word.at(i)) && !isalpha(word.at(i)) && !isupper(word.at(i)))
+                // {
+                //     word.at(i) = tolower(word.at(i));
+                // }
+                // else
                 //     break;
-                // }
 
-                //if (!ispunct(word.at(i)) ||)
-                if (isupper(word.at(i)) && !isalpha(word.at(i)) && !isupper(word.at(i)))
-                {
-                    word.at(i) = tolower(word.at(i));
-                }
-                else
-                    break;
-
-                for (i = 0; i > word.size(); i++)
-                {
-                    if (!ispunct(word.at(i)))
-                    {
-                        break;
-                    }
-                }
-                // if (isalpha(word.at(i)) && word.front() == 'i' && word.end() == 's')
+                // for (i = 0; i > word.size(); i++)
                 // {
-
+                //     if (!ispunct(word.at(i)))
+                //     {
+                //         break;
+                //     }
                 // }
+                // // if (isalpha(word.at(i)) && word.front() == 'i' && word.end() == 's')
+                // // {
 
-                if (isupper(word.at(i)) || islower(word.at(i)) || isalpha(word.at(i)) || isdigit(word.at(i)) || isspace(word.at(i)))
-                {
-                    word.at(i) = word.at(i);
-                    continue;
-                }
+                // // }
+
+                // if (isupper(word.at(i)) || islower(word.at(i)) || isalpha(word.at(i)) || isdigit(word.at(i)) || isspace(word.at(i)))
+                // {
+                //     word.at(i) = word.at(i);
+                //     continue;
+                // }
         }
 
             // }
