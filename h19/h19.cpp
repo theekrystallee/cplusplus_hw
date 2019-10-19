@@ -115,10 +115,10 @@ vector<WORD> spellCheck(istream& in,
 
         if(! found)
         {
-            WORD wordword;
-            wordword.word = word;
-            wordword.positions.push_back(pos);
-            results.push_back(wordword);
+            WORD newWord;
+            newWord.word = word;
+            newWord.positions.push_back(pos);
+            results.push_back(newWord);
         }
     }
 
