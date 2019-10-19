@@ -54,7 +54,7 @@ vector<WORD> spellCheck(istream& in,
                 if (isdigit(word.at(i) && isalpha(word.at(i)) && isspace(word.at(i))))
                 {
                     //in.ignore(1024, '\n');
-                    break;;
+
 
                 }
                 //  if (ispunct(word.at(i)) && word.find('A'))
