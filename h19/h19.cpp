@@ -59,7 +59,10 @@ vector<WORD> spellCheck(istream& in,
                         continue;
                     }
                     else
+                    {
                         break;
+                    }
+                    break;
                 }
                 //  if (ispunct(word.at(i)) && word.find('A'))
                 //     {
