@@ -91,13 +91,13 @@ vector<WORD> spellCheck(istream& in,
 
 
         int start = 0;
-        while (start < len)
-        {
-            if (ispunct(word.at(start)))
-            {
-                break;
-            }
-        }
+        // while (start < len)
+        // {
+        //     if (ispunct(word.at(start)))
+        //     {
+        //         break;
+        //     }
+        // }
         if (len > start)
         {
             if (ispunct(word.at(len - 1)))
