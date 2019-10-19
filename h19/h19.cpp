@@ -98,17 +98,17 @@ vector<WORD> spellCheck(istream& in,
         // ElseIf not found
         // Search the dictionary->found
         // If found word Then (Not misspelled) Go to top of loop
-        if(! found)
-        {
-            for(size_t i = 0; i < dictionary.size(); ++i)
-            {
-                if(dictionary.at(i) == word)
-                {
-                    found = true;
-                    continue;
-                }
-            }
-        }
+        // if(! found)
+        // {
+        //     for(size_t i = 0; i < dictionary.size(); ++i)
+        //     {
+        //         if(dictionary.at(i) == word)
+        //         {
+        //             found = true;
+        //             continue;
+        //         }
+        //     }
+        // }
         // ElseIf not found Create a WORD, populate with word, position
         // Add new WORD to results
         // End Loop
