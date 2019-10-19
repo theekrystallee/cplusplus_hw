@@ -54,6 +54,11 @@ vector<WORD> spellCheck(istream& in,
                 word.erase(i--, 1);
                 continue;
             }
+
+            if (isalpha(word.at(i)))
+            {
+                in.ignore();
+            }
             // if (word.at(i) == ' ' || word.at(i) == ',' || word.at(i) == ',')
             // {
             //     word.erase(i, 1);
@@ -131,6 +136,7 @@ vector<WORD> spellCheck(istream& in,
         //     word = word.substr(start, len - start);
         //     continue;
         // }
+
         bool found = false;
         for (size_t i = 0; i < results.size(); ++i)
         {
