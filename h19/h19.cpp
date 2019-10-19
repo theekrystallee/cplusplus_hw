@@ -57,7 +57,7 @@ vector<WORD> spellCheck(istream& in,
 
             if ((word.at(i) >= 'a' && word.at(i) <= 'z') || (word.at(i) >= 'A' && word.at(i) <= 'Z'))
             {
-                word.at(i) = '\0';
+                word.at(j++) = word.at(i);
             }
             // if (!ispunct(word.at(i)) || !isupper(word.at(i)) || (isspace(word.at(i)) && (ispunct(word.at(i)) && isalpha(in.peek()))))
             // {
