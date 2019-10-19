@@ -42,26 +42,17 @@ vector<WORD> spellCheck(istream& in,
         // Read next word (in >> word >> ws)
         in >> word >> ws;
 
-        for (char c : word)
+        for (size_t i = 0; i < word.size(); ++i)
         {
-            if (ispunct(c))
+            // Convert to lowercase, remove punctuation
+            word.at(i) = tolower(word.at(i));
+
+            if (ispunct(word.at(i)))
             {
-                word.erase(c);
+                word.erase(i--, 1);
                 continue;
             }
         }
-
-        // for (size_t i = 0; i < word.size(); ++i)
-        // {
-        //     // Convert to lowercase, remove punctuation
-        //     word.at(i) = tolower(word.at(i));
-
-        //     if (ispunct(word.at(i)))
-        //     {
-        //         word.erase(i--, 1);
-        //         continue;
-        //     }
-        // }
         // Search the list of misspelled words (results)->set found
         bool found = false;
 
