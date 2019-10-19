@@ -95,7 +95,6 @@ vector<WORD> spellCheck(istream& in,
         {
             if (ispunct(word.at(start)))
             {
-                //in.ignore(1024, '\n');
                 continue;
             }
         }
@@ -103,7 +102,6 @@ vector<WORD> spellCheck(istream& in,
         {
             if (ispunct(word.at(len - 1)))
             {
-                //in.ignore(1024, '\n');
                 continue;
             }
         }
@@ -113,7 +111,7 @@ vector<WORD> spellCheck(istream& in,
             continue;
         }
         bool found = false;
-        for (size_t i = 0; i < results.size(); ++++i)
+        for (size_t i = 0; i < results.size(); ++i)
         {
             if (results.at(i).word == word)
             {
@@ -125,7 +123,7 @@ vector<WORD> spellCheck(istream& in,
         }
         if (!found)
         {
-            for (size_t i = 0; i < excluded.size(); ++++i)
+            for (size_t i = 0; i < excluded.size(); ++i)
             {
                 if (excluded.at(i) == word)
                 {
@@ -136,7 +134,7 @@ vector<WORD> spellCheck(istream& in,
         }
         if(! found)
         {
-            for(size_t i = 0; i < dictionary.size();++i)
+            for(size_t i = 0; i < dictionary.size(); ++i)
             {
                 if(dictionary.at(i) == word)
                 {
