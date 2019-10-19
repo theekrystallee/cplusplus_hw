@@ -123,6 +123,19 @@ vector<WORD> spellCheck(istream& in,
                 // }
 
             }
+            for (int e : word)
+            {
+                size_t i = 0;
+                if (ispunct(word.at(i)))
+                {
+                    word.erase(i--, 1);
+                    continue;
+                }
+                else if (word == word)
+                {
+                    continue;
+                }
+            }
 
 
 
