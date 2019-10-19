@@ -57,7 +57,7 @@ vector<WORD> spellCheck(istream& in,
         // If found word Then
         // Add position to results
         // Go to top of loop
-        if (!found)
+        if (found)
         {
             for (size_t i = 0; i < results.size(); i++)
             {
