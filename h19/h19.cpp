@@ -67,18 +67,18 @@ vector<WORD> spellCheck(istream& in,
                 break;
             }
         }
-        if(found)
+        if(!found)
         {
             for(size_t i = 0; i < dictionary.size(); i++)
             {
                 if(dictionary.at(i) == word)
                 {
-                    found = false;
+                    found = true;
                     continue;
                 }
             }
         }
-        if(found)
+        if(!found)
         {
             WORD w;
             w.word = word;
