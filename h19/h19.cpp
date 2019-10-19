@@ -96,10 +96,10 @@ vector<WORD> spellCheck(istream& in,
 
         if(! found)
         {
-            WORD newWord;
-            newWord.word = word;
-            newWord.positions.push_back(pos);
-            results.push_back(newWord);
+            WORD w;
+            w.word = word;
+            w.positions.push_back(pos);
+            results.push_back(w);
         }
     }
 
