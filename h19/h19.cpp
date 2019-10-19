@@ -210,7 +210,7 @@ vector<WORD> spellCheck(istream& in,
                 if(dictionary.at(i) == word)
                 {
                     found = true;
-                    break;
+                    continue;
                 }
             }
         }
