@@ -188,7 +188,7 @@ vector<WORD> spellCheck(istream& in,
                 if (word == word)
                 {
                     found = false;
-                    continue;
+                    break;
                 }
             }
         }
