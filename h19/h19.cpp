@@ -57,14 +57,11 @@ vector<WORD> spellCheck(istream& in,
 
                     for (i = 0; i < word.size(); i++)
                     {
-                         if (word.at(i) == '?' || word.at(i) == ',' || word.at(i) == '!')
+                         if (ispunct(word.at(i)))
                         {
                             break;
                         }
-                        else
-                        {
-                            break;
-                        }
+
                     }
 
 
