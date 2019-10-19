@@ -92,7 +92,7 @@ vector<WORD> spellCheck(istream& in,
         {
             if (ispunct(word.at(len - 1)))
             {
-                in.ignore(1024, '\n');
+                //in.ignore(1024, '\n');
                 continue;
             }
         }
