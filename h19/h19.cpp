@@ -48,126 +48,13 @@ vector<WORD> spellCheck(istream& in,
         in >> word >> ws;
         for (size_t i = 0; i < word.size(); ++i)
         {
-            // if (isalpha(word.at(i)) || !isupper(word.at(i)) || !isdigit(word.at(i)))
-            // {
+            word.at(i) = tolower(word.at(i));
 
-
-            //     if (isspace(word.at(i)) || word.at(i) == '\0')
-            //     {
-            //         word.at(i) = tolower(word.at(i));
-            //         continue;
-            //     }
-            // }
-                word.at(i) = tolower(word.at(i));
-
-                if (ispunct(word.at(i)))
-                {
-                    word.erase(i--, 1);
-                }
-        //     else if (word == word)
-        //     {
-        //         continue;
-        //     }
-
-            // int j = 0;
-
-            // if (word.at(i) == ' ' || word.at(i) == ',' || word.at(i) == ',')
-            // {
-            //     word.erase(i, 1);
-            //     i--;
-            // }
-            // if ((word.at(i) >= 'a' && word.at(i) <= 'z') || (word.at(i) >= 'A' && word.at(i) <= 'Z'))
-            // {
-            //     word.at(j++) = word.at(i);
-            // }
-            // if (!ispunct(word.at(i)) || !isupper(word.at(i)) || (isspace(word.at(i)) && (ispunct(word.at(i)))))
-            // {
-            //     word.at(i) = tolower(word.at(i));
-            //     continue;
-            // }
-        //     if (ispunct(word.at(i)))
-        //     {
-        //         word.erase(i--, 1);
-
-
-                //  if (ispunct(word.at(i)) && word.find('A'))
-                // {
-                //     word.at(i) = toupper(word.at(i));
-                //     continue;
-                // }
-
-                // else if (isspace(word.at(i)))
-                // {
-                //     continue;
-                // }
-                // // else if (in.eof())
-                // // {
-                // //     break;
-                // // }
-
-                // //if (!ispunct(word.at(i)) ||)
-                // if (isupper(word.at(i)) && !isalpha(word.at(i)) && !isupper(word.at(i)))
-                // {
-                //     word.at(i) = tolower(word.at(i));
-                // }
-                // else
-                //     break;
-
-                // for (i = 0; i > word.size(); i++)
-                // {
-                //     if (!ispunct(word.at(i)))
-                //     {
-                //         break;
-                //     }
-                // }
-                // // if (isalpha(word.at(i)) && word.front() == 'i' && word.end() == 's')
-                // // {
-
-                // // }
-
-                // if (isupper(word.at(i)) || islower(word.at(i)) || isalpha(word.at(i)) || isdigit(word.at(i)) || isspace(word.at(i)))
-                // {
-                //     word.at(i) = word.at(i);
-                //     continue;
-                // }
+            if (ispunct(word.at(i)))
+            {
+                word.erase(i--, 1);
+            }
         }
-
-            // }
-            // for (int e : word)
-            // {
-            //     if (ispunct(word.at(i)))
-            //     {
-            //         word.erase(i--, 1);
-            //         continue;
-            //     }
-            //     else if (word == word)
-            //     {
-            //         continue;
-            //     }
-            // }
-
-
-
-        //int start = 0;
-        // while (start < len)
-        // {
-        //     if (ispunct(word.at(start)))
-        //     {
-        //         break;
-        //     }
-        // }
-        // if (len > start)
-        // {
-        //     if (ispunct(word.at(len - 1)))
-        //     {
-        //         continue;
-        //     }
-        // }
-        // if (len > start)
-        // {
-        //     word = word.substr(start, len - start);
-        //     continue;
-        // }
 
         bool found = false;
         for (size_t i = 0; i < results.size(); i++)
