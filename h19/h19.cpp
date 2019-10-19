@@ -48,7 +48,7 @@ vector<WORD> spellCheck(istream& in,
 
         for (size_t i = 0; i < word.size(); ++i)
         {
-            if (ispunct(word.at(i)) || isspace(word.at(i)) || isalpha(word.at(i)) || isdigit(word.at(i)))
+            if (ispunct(word.at(i)))
             {
                 word.erase(i--, 1);
                 continue;
@@ -110,7 +110,7 @@ vector<WORD> spellCheck(istream& in,
 
                 // }
 
-                if (isupper(word.at(i)) || islower(word.at(i)))
+                if (isupper(word.at(i)) || islower(word.at(i)) || isalpha(word.at(i)) || isdigit(word.at(i)))
                 {
                     word.at(i) = word.at(i);
                     continue;
