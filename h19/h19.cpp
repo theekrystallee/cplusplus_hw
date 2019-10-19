@@ -113,7 +113,7 @@ vector<WORD> spellCheck(istream& in,
             continue;
         }
         bool found = false;
-        for (size_t i = 0; i < results.size(); i++)
+        for (size_t i = 0; i < results.size(); ++++i)
         {
             if (results.at(i).word == word)
             {
