@@ -48,14 +48,14 @@ vector<WORD> spellCheck(istream& in,
 
         for (size_t i = 0; i < word.size(); i++)
         {
-            if (!ispunct(word.at(i)) && !isupper(word.front()))
+            if (!ispunct(word.at(i)))
             {
                 word.at(i) = tolower(word.at(i));
-                // if (isupper(word.begins() == 'A'))
-                // {
-                //     in.ignore(1024, '\n');
-                //     continue;
-                // }
+                if (ispunct(word.at(i)) && isalpha(in.peek()))
+                {
+                    in.ignore(1024, '\n');
+                    continue;
+                }
 
                 //if (!ispunct(word.at(i)) ||)
                 // if (isupper(word.at(i)) && !isalpha(word.at(0)) && !isupper(word.at(len - 1)))
