@@ -152,6 +152,16 @@ vector<WORD> spellCheck(istream& in,
             }
 
         }
+        if (found)
+        {
+            for (size_t i = 0; i < word.size(); i++)
+            {
+                if (word.at(i) == word.at(i))
+                {
+                    continue;;
+                }
+            }
+        }
         if (!found)
         {
             for (size_t i = 0; i < excluded.size(); i++)
