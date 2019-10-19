@@ -91,12 +91,12 @@ vector<WORD> spellCheck(istream& in,
                 // }
 
                 //if (!ispunct(word.at(i)) ||)
-                if (isupper(word.at(i)) && !isalpha(word.at(0)) && !isupper(word.at(len - 1)))
-                {
-                    word.at(i) = tolower(word.at(i));
-                }
-                else
-                    continue;
+                // if (isupper(word.at(i)) && !isalpha(word.at(0)) && !isupper(word.at(len - 1)))
+                // {
+                //     word.at(i) = tolower(word.at(i));
+                // }
+                // else
+                //     continue;
 
                 // for (i = 0; i > word.size(); i++)
                 // {
@@ -109,6 +109,11 @@ vector<WORD> spellCheck(istream& in,
                 // {
 
                 // }
+
+                if (isupper(word.at(i)))
+                {
+                    word.at(i) = toupper(word.at(i));
+                }
 
             }
 
