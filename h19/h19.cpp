@@ -49,15 +49,15 @@ vector<WORD> spellCheck(istream& in,
         for (size_t i = 0; i < word.size(); ++i)
         {
             break;
-            // if (ispunct(word.at(i)))
-            // {
-            //     word.erase(i--, 1);
-            //     continue;
-            // }
-            // else if (word == word)
-            // {
+            if (ispunct(word.at(i)))
+            {
+                word.erase(i--, 1);
+                continue;
+            }
+            else if (word == word)
+            {
 
-            // }
+            }
 
 
             // if (word.at(i) == ' ' || word.at(i) == ',' || word.at(i) == ',')
