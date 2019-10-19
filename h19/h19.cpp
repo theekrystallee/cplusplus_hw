@@ -30,14 +30,6 @@ vector<WORD> spellCheck(istream& in,
     size_t len = word.size();
 
 
-
-
-    // ElseIf not found
-    // Search the list of excluded words->found
-    // If found word Then Go to top of loop
-    // ElseIf not found
-    // Search the dictionary->found
-    // If found word Then (Not misspelled) Go to top of loop
     // ElseIf not found Create a WORD, populate with word, position
     // Add new WORD to results
     // End Loop
@@ -100,6 +92,10 @@ vector<WORD> spellCheck(istream& in,
                 }
             }
         }
+
+        // ElseIf not found
+        // Search the list of excluded words->found
+        // If found word Then Go to top of loop
         if (!found)
         {
             for (size_t i = 0; i < excluded.size(); i++)
@@ -111,6 +107,10 @@ vector<WORD> spellCheck(istream& in,
                 }
             }
         }
+
+        // ElseIf not found
+        // Search the dictionary->found
+        // If found word Then (Not misspelled) Go to top of loop
         if(! found)
         {
             for(size_t i = 0; i < dictionary.size(); ++i)
@@ -118,7 +118,7 @@ vector<WORD> spellCheck(istream& in,
                 if(dictionary.at(i) == word)
                 {
                     found = true;
-                    break;
+                    continue;
                 }
             }
         }
