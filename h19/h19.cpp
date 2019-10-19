@@ -125,7 +125,7 @@ vector<WORD> spellCheck(istream& in,
         }
         if (!found)
         {
-            for (size_t i = 0; i < excluded.size(); i++)
+            for (size_t i = 0; i < excluded.size(); ++i)
             {
                 if (excluded.at(i) == word)
                 {
