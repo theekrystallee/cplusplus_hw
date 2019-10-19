@@ -79,7 +79,7 @@ vector<WORD> spellCheck(istream& in,
             if (ispunct(word.at(start)))
             {
                 in.ignore(1024, '\n');
-                break;
+                continue;
             }
         }
         if (len > start)
@@ -87,7 +87,7 @@ vector<WORD> spellCheck(istream& in,
             if (ispunct(word.at(len - 1)))
             {
                 in.ignore(1024, '\n');
-                break;
+                continue;
             }
         }
         if (len > start)
@@ -98,17 +98,10 @@ vector<WORD> spellCheck(istream& in,
         bool found = false;
         for (size_t i = 0; i < results.size(); i++)
         {
-            char punct;
             if (results.at(i).word == word)
             {
                 results.at(i).positions.push_back(pos);
                 found = true;
-                break;
-            }
-            else if (ispunct(results.at(i).word == word))
-            {
-                results.at(i).positions.push_back(pos);
-                results.at(i).positions.push_back(pos);
                 break;
             }
         }
