@@ -30,7 +30,6 @@ vector<WORD> spellCheck(istream& in,
     size_t len = word.size();
 
     // Read until end of file (while in)
-
     while (in)
     {
 
@@ -46,9 +45,7 @@ vector<WORD> spellCheck(istream& in,
         in >> word >> ws;
         for (size_t i = 0; i < word.size(); ++i)
         {
-
             // Convert to lowercase, remove punctuation
-
             word.at(i) = tolower(word.at(i));
 
             if (ispunct(word.at(i)))
@@ -58,7 +55,6 @@ vector<WORD> spellCheck(istream& in,
         }
 
         // Search the list of misspelled words (results)->set found
-
         bool found = false;
         for (size_t i = 0; i < results.size(); i++)
         {
@@ -79,10 +75,12 @@ vector<WORD> spellCheck(istream& in,
             for (size_t i = 0; i < word.size(); i++)
             {
                 if (word == word)
-                {
-                    found = false;
-                    continue;
-                }
+                    {found = false;
+                    continue;}
+                // {
+                //     found = false;
+                //     continue;
+                // }
             }
         }
 
