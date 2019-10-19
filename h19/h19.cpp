@@ -53,6 +53,8 @@ vector<WORD> spellCheck(istream& in,
             {
                 word.erase(i--, 1);
             }
+            else
+                break;
         //     else if (word == word)
         //     {
         //         continue;
