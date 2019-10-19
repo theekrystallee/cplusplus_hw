@@ -47,11 +47,13 @@ vector<WORD> spellCheck(istream& in,
         }
         in >> word >> ws;
 
-        for (size_t i = 0; i < word.size(); i++)
+        for (size_t i = 0; i < word.size(); ++i)
         {
             if (ispunct(word.at(i)))
             {
-                word.erase(--i, 1);
+                ++i;
+                word.erase(i, 1);
+                i--;
             }
 
         //     else if (word == word)
