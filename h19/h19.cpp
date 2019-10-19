@@ -115,6 +115,8 @@ vector<WORD> spellCheck(istream& in,
                     word.at(i) = word.at(i);
                     continue;
                 }
+                else
+                    break;
 
             }
 
