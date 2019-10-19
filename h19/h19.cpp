@@ -52,7 +52,6 @@ vector<WORD> spellCheck(istream& in,
             if (ispunct(word.at(i)))
             {
                 word.erase(i--, 1);
-                continue;
             }
         //     else if (word == word)
         //     {
