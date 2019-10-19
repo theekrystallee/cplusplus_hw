@@ -59,7 +59,6 @@ vector<WORD> spellCheck(istream& in,
                          if (ispunct(word.at(i)))
                         {
                             continue;
-                            ++i;
                         }
 
                     }
