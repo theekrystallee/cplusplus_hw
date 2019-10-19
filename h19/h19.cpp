@@ -67,45 +67,14 @@ vector<WORD> spellCheck(istream& in,
             }
         }
 
-        // for (size_t i = 0; i < results.size(); i++)
-        // {
-        //     if (results.at(i).word == word)
-        //     {
-        //         results.at(i).positions.push_back(pos);
-        //         found = true;
-        //         break;
-        //     }
-        // }
-
         // If found word Then
         // Add position to results
         // Go to top of loop
 
-        // if (found)
-        // {
-        //     for (size_t i = 0; i < word.size(); i++)
-        //     {
-        //         if (word == word)
-        //         {
-        //             found = false;
-        //             continue;
-        //         }
-        //     }
         // }
         // ElseIf not found
         // Search the list of excluded words->found
-        // // If found word Then Go to top of loop
-        // if (!found)
-        // {
-        //     for (size_t i = 0; i < excluded.size(); i++)
-        //     {
-        //         if (excluded.at(i) == word)
-        //         {
-        //             found = true;
-        //             continue;
-        //         }
-        //     }
-        // }
+
         // ElseIf not found
         // Search the dictionary->found
         // If found word Then (Not misspelled) Go to top of loop
@@ -122,28 +91,18 @@ vector<WORD> spellCheck(istream& in,
             }
         }
 
-        // if(! found)
-        // {
-        //     for(const string& e : dictionary)
-        //     {
-        //         if(e == word)
-        //         {
-        //             found = true;
-        //             continue;
-        //         }
-        //     }
-        // }
         // ElseIf not found Create a WORD, populate with word, position
         // Add new WORD to results
         // End Loop
 
-        // if(! found)
-        // {
-        //     WORD newWord;
-        //     newWord.word = word;
-        //     newWord.positions.push_back(pos);
-        //     results.push_back(newWord);
-        // }
+        if(! found)
+        {
+            WORD newWord;
+            newWord.word = word;
+            newWord.positions.push_back(pos);
+            results.push_back(newWord);
+            break;
+        }
     }
 
     // Return results (misspelled words and their positions)
