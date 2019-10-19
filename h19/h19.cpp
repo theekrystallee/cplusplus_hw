@@ -75,15 +75,12 @@ vector<WORD> spellCheck(istream& in,
             for (size_t i = 0; i < word.size(); i++)
             {
                 if (word == word)
-                    {found = false;
-                    continue;}
-                // {
-                //     found = false;
-                //     continue;
-                // }
+                {
+                    found = false;
+                    continue;
+                }
             }
         }
-
         // ElseIf not found
         // Search the list of excluded words->found
         // If found word Then Go to top of loop
@@ -98,7 +95,6 @@ vector<WORD> spellCheck(istream& in,
                 }
             }
         }
-
         // ElseIf not found
         // Search the dictionary->found
         // If found word Then (Not misspelled) Go to top of loop
@@ -119,10 +115,10 @@ vector<WORD> spellCheck(istream& in,
 
         if(! found)
         {
-            WORD w;
-            w.word = word;
-            w.positions.push_back(pos);
-            results.push_back(w);
+            WORD wordword;
+            wordword.word = word;
+            wordword.positions.push_back(pos);
+            results.push_back(wordword);
         }
     }
 
