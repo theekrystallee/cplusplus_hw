@@ -53,6 +53,8 @@ vector<WORD> spellCheck(istream& in,
                 word.erase(i--, 1);
                 continue;
             }
+            else
+                break;
 
 
             // if (word.at(i) == ' ' || word.at(i) == ',' || word.at(i) == ',')
