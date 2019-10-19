@@ -63,7 +63,6 @@ vector<WORD> spellCheck(istream& in,
             {
                 if (results.at(i).word == word)
                 {
-                    found = false;
                     results.at(i).positions.push_back(pos);
                     break;
                 }
