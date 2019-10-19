@@ -29,7 +29,7 @@ vector<WORD> spellCheck(istream& in,
     size_t len = word.size();
 
     // Read until end of file (while in)
-    while (in)
+    while (in >> word)
     {
 
         // Save current position (in.tellg()->cast to long long)
@@ -57,16 +57,13 @@ vector<WORD> spellCheck(istream& in,
         // If found word Then
         // Add position to results
         // Go to top of loop
-        if (found)
+        for (size_t i = 0; i < results.size(); i++)
         {
-            for (size_t i = 0; i < results.size(); i++)
+            if (results.at(i).word == word)
             {
-                if (results.at(i).word == word)
-                {
-                    found = false;
-                    results.at(i).positions.push_back(pos);
-                    break;
-                }
+                found = false;
+                results.at(i).positions.push_back(pos);
+                break;
             }
         }
         // ElseIf not found
