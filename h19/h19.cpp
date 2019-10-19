@@ -51,12 +51,12 @@ vector<WORD> spellCheck(istream& in,
             if (!ispunct(word.at(i)))
             {
                 word.at(i) = tolower(word.at(i));
-                if (ispunct(word.at(i)) && isalpha(in.peek()))
+                if (ispunct(word.at(i)) || isalpha(in.peek()))
                 {
                     //in.ignore(1024, '\n');
                     continue;
 
-                     if (ispunct(word.at(i)) || word.find('A'))
+                     if (ispunct(word.at(i)))
                     {
                         word.at(i) = toupper(word.at(i));
                         continue;
