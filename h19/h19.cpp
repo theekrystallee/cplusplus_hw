@@ -102,7 +102,7 @@ vector<WORD> spellCheck(istream& in,
         {
             WORD w;
             w.word = word;
-            //w.positions.push_back(pos);
+            w.positions.push_back(pos);
             results.push_back(w);
         }
     }
