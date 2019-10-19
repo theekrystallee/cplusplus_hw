@@ -51,11 +51,13 @@ vector<WORD> spellCheck(istream& in,
             if (!ispunct(word.at(i)) || !isupper(word.at(i)) || (isspace(word.at(i)) && (ispunct(word.at(i)) && isalpha(in.peek()))))
             {
                 word.at(i) = tolower(word.at(i));
-                if (isdigit(word.at(i) && isalpha(word.at(i)) && isspace(word.at(i))))
+
+                while (in)
                 {
-                    //in.ignore(1024, '\n');
-
-
+                    if (word.at(i) == '?' || word.at(i) == ',' || word.at(i) == '!')
+                    {
+                        continue;
+                    }
                 }
                 //  if (ispunct(word.at(i)) && word.find('A'))
                 //     {
