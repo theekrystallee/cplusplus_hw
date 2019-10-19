@@ -46,7 +46,7 @@ vector<WORD> spellCheck(istream& in,
         {
             if (ispunct(c))
             {
-                word.erase(c);
+                word.erase(c--, 1);
                 continue;
             }
         }
