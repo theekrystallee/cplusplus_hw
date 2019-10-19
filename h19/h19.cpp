@@ -29,13 +29,6 @@ vector<WORD> spellCheck(istream& in,
     string word;
     size_t len = word.size();
 
-
-    // ElseIf not found Create a WORD, populate with word, position
-    // Add new WORD to results
-    // End Loop
-    // Return results (misspelled words and their positions)
-
-
     // Read until end of file (while in)
 
     while (in)
@@ -122,14 +115,21 @@ vector<WORD> spellCheck(istream& in,
                 }
             }
         }
+        // ElseIf not found Create a WORD, populate with word, position
+        // Add new WORD to results
+        // End Loop
+
         if(! found)
         {
             WORD w;
             w.word = word;
             w.positions.push_back(pos);
             results.push_back(w);
+            break;
         }
     }
+
+    // Return results (misspelled words and their positions)
     return results;
 }
 /////////////// STUDENT TESTING ////////////////////
