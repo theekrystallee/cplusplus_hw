@@ -59,7 +59,7 @@ vector<WORD> spellCheck(istream& in,
                 continue;
             }
 
-
+            int j = 0;
 
             if (word.at(i) == ' ' || word.at(i) == ',' || word.at(i) == ',')
             {
@@ -67,10 +67,10 @@ vector<WORD> spellCheck(istream& in,
                 i--;
             }
 
-            // if ((word.at(i) >= 'a' && word.at(i) <= 'z') || (word.at(i) >= 'A' && word.at(i) <= 'Z'))
-            // {
-            //     word.at(j++) = word.at(i);
-            // }
+            if ((word.at(i) >= 'a' && word.at(i) <= 'z') || (word.at(i) >= 'A' && word.at(i) <= 'Z'))
+            {
+                word.at(j++) = word.at(i);
+            }
             // if (!ispunct(word.at(i)) || !isupper(word.at(i)) || (isspace(word.at(i)) && (ispunct(word.at(i)))))
             // {
             //     word.at(i) = tolower(word.at(i));
