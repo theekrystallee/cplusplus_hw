@@ -104,24 +104,24 @@ vector<WORD> spellCheck(istream& in,
                 // else
                 //     continue;
 
-                // for (i = 0; i > word.size(); i++)
-                // {
-                //     if (!ispunct(word.at(i)))
-                //     {
-                //         break;
-                //     }
-                // }
+                for (i = 0; i > word.size(); i++)
+                {
+                    if (!ispunct(word.at(i)))
+                    {
+                        break;
+                    }
+                }
                 // if (isalpha(word.at(i)) && word.front() == 'i' && word.end() == 's')
                 // {
 
                 // }
 
-                if (isupper(word.at(i)) || islower(word.at(i)) || isalpha(word.at(i)) || isdigit(word.at(i)) || isspace(word.at(i)))
-                {
-                    word.at(i) = word.at(i);
-                    continue;
-                }
-    }
+                // if (isupper(word.at(i)) || islower(word.at(i)) || isalpha(word.at(i)) || isdigit(word.at(i)) || isspace(word.at(i)))
+                // {
+                //     word.at(i) = word.at(i);
+                //     continue;
+                // }
+        }
 
             // }
             // for (int e : word)
