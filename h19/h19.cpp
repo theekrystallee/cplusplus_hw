@@ -15,7 +15,7 @@
 
 using namespace std;
 
-string STUDENT = "klee159"; // Add your Canvas/occ-email ID
+string STUDENT = "klee159 "; // Add your Canvas/occ-email ID
 
 
 #include "h19.h"
@@ -55,6 +55,19 @@ vector<WORD> spellCheck(istream& in,
                 {
                     //in.ignore(1024, '\n');
                     continue;
+                }
+                else if (ispunct(word.at(i)) || word.find('A'))
+                {
+                    word.at(i) = toupper(word.at(i));
+                    continue;
+                }
+                else if (isspace(word.at(i)))
+                {
+                    continue;
+                }
+                else if (in.eof())
+                {
+                    break;
                 }
 
                 //if (!ispunct(word.at(i)) ||)
