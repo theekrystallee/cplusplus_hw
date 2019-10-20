@@ -64,7 +64,7 @@ vector<WORD> spellCheck(istream& in,
                 if (word == e.word)
                 {
                     e.positions.push_back(pos);
-                    break;
+                    continue;
                 }
             }
         }
