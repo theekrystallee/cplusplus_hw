@@ -57,15 +57,25 @@ vector<WORD> spellCheck(istream& in,
         // If found word Then
         // Add position to results
         // Go to top of loop
-        for (size_t i = 0; i < results.size(); i++)
+        if (found)
         {
-            if (results.at(i).word == word)
+            for (auto& e : results)
             {
-                found = false;
-                results.at(i).positions.push_back(pos);
-                break;
+                if (word == e.word)
+                {
+                    e.positions.push_back(pos);
+                }
             }
         }
+        // for (size_t i = 0; i < results.size(); i++)
+        // {
+        //     if (results.at(i).word == word)
+        //     {
+        //         found = false;
+        //         results.at(i).positions.push_back(pos);
+        //         break;
+        //     }
+        // }
         // ElseIf not found
         // Search the dictionary->found
         if(!found)
