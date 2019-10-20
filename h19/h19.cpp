@@ -53,10 +53,7 @@ vector<WORD> spellCheck(istream& in,
             }
         }
         bool found = false;
-        // Search the list of misspelled words (results)->set found
-        // If found word Then
-        // Add position to results
-        // Go to top of loop
+
         if (found)
         {
             for (auto& e : results)
@@ -68,17 +65,6 @@ vector<WORD> spellCheck(istream& in,
                 }
             }
         }
-        // for (size_t i = 0; i < results.size(); i++)
-        // {
-        //     if (results.at(i).word == word)
-        //     {
-        //         found = false;
-        //         results.at(i).positions.push_back(pos);
-        //         break;
-        //     }
-        // }
-        // ElseIf not found
-        // Search the dictionary->found
         if(!found)
         {
             for(size_t i = 0; i < dictionary.size(); i++)
@@ -90,8 +76,6 @@ vector<WORD> spellCheck(istream& in,
                 }
             }
         }
-        // ElseIf not found Create a WORD, populate with word, position
-        // Add new WORD to results
         if(!found)
         {
             WORD w;
