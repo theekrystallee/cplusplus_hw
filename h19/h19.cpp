@@ -29,30 +29,39 @@ vector<WORD> spellCheck(istream& in,
     size_t len = word.size();
 
     // Read until end of file (while in)
-    while (in)
+        while (in)
     {
 
         // Save current position (in.tellg()->cast to long long)
-        long long pos = static_cast<long long>(in.tellg());
-
         // If tellg() returns -1 (at end of file) Then Exit the loop
-        if (pos == -1) break; // then exit the loop
 
+        long long pos = static_cast<long long>(in.tellg());
+        if (pos == -1)
+        {
+            break; // Then Exit the loop
+        }
         // Read next word (in >> word >> ws)
         in >> word >> ws;
-
-        for (size_t i = 0; i < word.size(); ++i)
+        string temp;
+        for (char c : word)
         {
-            // Convert to lowercase, remove punctuation
-            word.at(i) = tolower(word.at(i));
-
-            if (ispunct(word.at(i)))
+            if (!ispunct(c))
             {
-                word.erase(i--, 1);
-                continue;
+                temp += tolower(c);
             }
         }
+        word = temp;
+        temp = "";
+
         bool found = false;
+
+        for (auto& e : results)
+        {
+            if (word == e.word)
+            {
+                found = true;
+            }
+        }
 
         if (found)
         {
@@ -61,22 +70,25 @@ vector<WORD> spellCheck(istream& in,
                 if (word == e.word)
                 {
                     e.positions.push_back(pos);
-                    continue;
                 }
             }
         }
-        if(!found)
+        if (found)
+            continue;
+
+        if (!found)
         {
-            for(size_t i = 0; i < dictionary.size(); i++)
+            for (auto d : dictionary)
             {
-                if(dictionary.at(i) == word)
-                {
+                if (word == d)
                     found = true;
-                    continue;
-                }
             }
         }
-        if(!found)
+
+        if (found)
+            continue;
+
+        if (!found)
         {
             WORD w;
             w.word = word;
