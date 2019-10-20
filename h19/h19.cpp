@@ -24,6 +24,7 @@ vector<WORD> spellCheck(istream& in,
                     const vector<string>& excluded)
 {
     // Create the empty results vector
+
     vector<WORD> results;
     string word;
     size_t len = word.size();
@@ -53,18 +54,21 @@ vector<WORD> spellCheck(istream& in,
             }
         }
         bool found = false;
-
-        if (found)
+        // Search the list of misspelled words (results)->set found
+        // If found word Then
+        // Add position to results
+        // Go to top of loop
+        for (size_t i = 0; i < results.size(); i++)
         {
-            for (auto& e : results)
+            if (results.at(i).word == word)
             {
-                if (word == e.word)
-                {
-                    e.positions.push_back(pos);
-                    continue;
-                }
+                found = false;
+                results.at(i).positions.push_back(pos);
+                break;
             }
         }
+        // ElseIf not found
+        // Search the dictionary->found
         if(!found)
         {
             for(size_t i = 0; i < dictionary.size(); i++)
@@ -76,6 +80,8 @@ vector<WORD> spellCheck(istream& in,
                 }
             }
         }
+        // ElseIf not found Create a WORD, populate with word, position
+        // Add new WORD to results
         if(!found)
         {
             WORD w;
