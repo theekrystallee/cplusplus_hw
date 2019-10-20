@@ -97,7 +97,6 @@ vector<WORD> spellCheck(istream& in,
             w.positions.push_back(pos);
             results.push_back(w);
         }
-        break; // End Loop
     }
 
     return results;
