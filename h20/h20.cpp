@@ -19,7 +19,7 @@
 
 using namespace std;
 
-string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
+string STUDENT = "klee159"; // Add your Canvas/occ-email ID
 
 #include "h20.h"
 
