@@ -44,8 +44,9 @@ void negative(unsigned char * const img, int width, int height)
         p++;
         *p = 255 - *p;
         p++;
+        *p = 255 - *p;
         p++;
-
+        p++;
     }
 }
 
