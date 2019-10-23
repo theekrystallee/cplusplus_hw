@@ -3,19 +3,53 @@
  *  @date Put the date here
  *  @file h20.cpp
  */
-#include <string>
 #include <iostream>
+#include <string>
+#include <vector>
+#include <stdexcept>
+#include <fstream>
+#include <cctype>
+#include <istream>
+#include <sstream>
+#include <iomanip>
+#include <cmath>
+#include <algorithm>
+
+
+
 using namespace std;
 
 string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
 
 #include "h20.h"
 
+/**
+ * Reverses (inverts) every pixel in img, except any alpha pixels.
+ * @param data a constant pointer to the image data.
+ * @param width the width of the image in pixels
+ * @param height the height of the image in pixels
+ * Assume 4 bits per pixel
+ */
+
 const int BPP = 4;
 void negative(unsigned char * const img, int width, int height)
 {
-    // Add your code here
+    unsigned char * p = img;
+    const auto end = img + width * height *BPP;
+
+
+    while (p != end )
+    {
+        *p = 255 - *p;
+        p++;
+        *p = 255 - *p;
+        p++;
+        p++;
+
+    }
 }
+
+
 
 /////////////// STUDENT TESTING ////////////////////
 int run()
