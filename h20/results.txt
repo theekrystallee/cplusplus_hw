@@ -1,0 +1,14 @@
+TESTING H20--WHO AM I?
+----------------------------------------------------------------------
+Checking function: negative -------------------
+   + negative worked correctly for images/c.jpg
+   + negative worked correctly for images/cpp.png
+   + negative worked correctly for images/lego.png
+   + negative worked correctly for images/smiley-face.png
+----------------------------------------------------------------------
+  Tests passing 4/4 (100%).
+
+----------------------------------------------------------------------
+H20:WHO AM I?:ALL TESTS -- PASS 4/4 (100%).
+----------------------------------------------------------------------
+MTU3MTgzNjM0OTpXSE8gQU0gST86SDIwOjEwMC4wMCU=
