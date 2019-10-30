@@ -1,0 +1,45 @@
+TESTING H23--klee159
+----------------------------------------------------------------------
+Checking function: alternatingSum -------------------
+   + For input of ARRAY({564})->564
+   + For input of ARRAY({840, 269})->571
+   + For input of ARRAY({745, 290, 134})->589
+   + For input of ARRAY({653, 627, 502, 372})->156
+   + For input of ARRAY({53, 428, 800, 873, 59})->-389
+   + For input of ARRAY({394, 870, 510, 519, 287, 388})->-586
+   + For input of ARRAY({518, 267, 491, 721, 9, 179, 993})->844
+   + For input of ARRAY({311, 380, 953, 360, 603, 555, 220, 990})->-198
+   + For input of ARRAY({622, 177, 562, 288, 3, 103, 444, 972, 626})->717
+   + For input of ARRAY({267, 729, 707, 292, 523, 301, 89, 600, 731, 707})->-312
+   + For input of ARRAY({63, 598, 971, 489, 4, 834, 557, 819, 847, 778, 653})->-423
+   + For input of ARRAY({947, 823, 611, 226, 847, 950, 882, 620, 875, 356, 215, 550})->852
+   + For input of ARRAY({369, 288, 846, 957, 694, 533, 257, 682, 807, 186, 688, 77, 483})->1421
+   + For input of ARRAY({17, 643, 914, 795, 117, 321, 329, 831, 518, 937, 808, 347, 55, 706})->-1822
+----------------------------------------------------------------------
+  Tests passing 14/14 (100%).
+
+Checking function: Test the minMax function -------------------
+ -- double a[] = {0, 2.2, 3.5, -1.2, -2, 9, 17, 4, 3, 12, 175, 9, 15};
+   + Maximum of first 4 elements->&a[2]
+   + Minimum of first 4 elements->&a[3]
+   + Maximum of first 0 elements->nullptr
+   + Minimum of first 0 elements->nullptr
+   + Maximum of first 1 elements->&a[0]
+   + Minimum of first 1 elements->&a[0]
+   + Maximum of first 2 elements->&a[1]
+   + Minimum of first 2 elements->&a[0]
+   + Maximum of first 5 elements->&a[2]
+   + Minimum of first 5 elements->&a[4]
+   + Maximum of last 5 elements->&a[10]
+   + Minimum of last 5 elements->&a[8]
+   + Maximum of all elements->&a[10]
+   + Minimum of all elements->&a[4]
+   + Maximum of some middle elements->&a[6]
+   + Minimum of some middle elements->&a[8]
+----------------------------------------------------------------------
+  Tests passing 16/16 (100%).
+
+----------------------------------------------------------------------
+H23:klee159:ALL TESTS -- PASS 30/30 (100%).
+----------------------------------------------------------------------
+MTU3MjQxNjY1NDprbGVlMTU5OkgyMzoxMDAuMDAl

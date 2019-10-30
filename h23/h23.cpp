@@ -7,7 +7,7 @@
 #include <iostream>
 using namespace std;
 
-string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
+string STUDENT = "klee159"; // Add your Canvas/occ-email ID
 
 #include "h23.h"
 
