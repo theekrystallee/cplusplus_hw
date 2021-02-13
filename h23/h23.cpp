@@ -7,53 +7,42 @@
 #include <iostream>
 using namespace std;
 
-string STUDENT = "klee159"; // Add your Canvas/occ-email ID
+string STUDENT = "klee159"; 
 
 #include "h23.h"
 
-// Add your code here
-int alternatingSum(const int a[], size_t size)
-{
+int alternatingSum(const int a[], size_t size){
     int sum = a[0];
 
-    for (size_t i = 1; i < size; i++)
-    {
-        if (i % 2 == 0)
-        {
+    for (size_t i = 1; i < size; i++){
+        if (i % 2 == 0){
             sum += a[i];
         }
-        else
-        {
+        else{
             sum -= a[i];
         }
     }
     return sum;
 }
 
-
-MinMax minMax(const double *ptr, size_t size)
-{
+MinMax minMax(const double *ptr, size_t size){
     ptr = ptr;
 
     MinMax result = {};
 
-    if ( !size )
-    {
+    if ( !size ){
         return result;
     }
 
     result = { ptr, ptr};
-
+    
     const double * atEnd = ptr + size;
-
-    while ( ptr < atEnd)
-    {
-        if (*ptr > *(result.max))
-        {
+    
+    while ( ptr < atEnd){
+        if (*ptr > *(result.max)){
             result.max = ptr;
         }
-        if (*ptr < *(result.min))
-        {
+        if (*ptr < *(result.min)){
             result.min = ptr;
         }
         ++ptr;
@@ -64,8 +53,7 @@ MinMax minMax(const double *ptr, size_t size)
 
 /////////////// STUDENT TESTING ////////////////////
 
-int run()
-{
+int run(){
     // Just some samples for class
     cout << "Try some code on your own" << endl;
 
