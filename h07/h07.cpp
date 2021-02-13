@@ -13,17 +13,14 @@ int sumNums(const string& s)
 {
     int sum = 0;
     int num = 0;
-    for (size_t i = 0, len = s.size(); i <= len - 1; i++)
-    {
+    for (size_t i = 0, len = s.size(); i <= len - 1; i++){
         char digit = s.at(i);
-        if (isdigit(digit))
-        {
+        if (isdigit(digit)){
             digit -= '0';
             num *= 10;
             num += digit;
         }
-        else
-        {
+        else{
             sum += num;
             num = 0;
         }
@@ -33,9 +30,7 @@ int sumNums(const string& s)
 }
 
 /////////////// Optional Student Code /////////////////
-int run()
-{
-
+int run(){
     return 0;
 }
 
